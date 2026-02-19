@@ -44,12 +44,23 @@ function DesktopHeader() {
 }
 
 function LeftSideHeader() {
+  const [photoUrl, setPhotoUrl] = useState("./public/logo-image.png")
+  useEffect(() => {
+    setInterval(() => {
+      const sources = ["./public/logo-image.png", "./public/my-photo.jpg"]
+      if (photoUrl == sources[0]) {
+        setPhotoUrl(sources[1])
+      } else {
+        setPhotoUrl(sources[0])
+      }
+    }, 3000)
+  })
   return (
     <>
       <div className="left-head flex-hor">
-            <img src="./public/logo-image.png" alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
-            <h1 className="title-head title-head-index">RHS Code</h1>
-        </div>
+          <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
+          <h1 className="title-head title-head-index">RHS Code</h1>
+      </div>
     </>
   )
 }

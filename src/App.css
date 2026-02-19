@@ -100,3 +100,8 @@ img, svg {
     object-fit: cover;
     filter: invert(1);
 }
+
+@keyframes opacityTransition {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
