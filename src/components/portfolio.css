@@ -1,0 +1,71 @@
+.gapper {
+    gap: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.portfolio-item-container {
+    border: solid 1px white;
+    border-radius: 24px;
+    padding: 16px;
+    gap: 16px;
+}
+.header-item-container {
+    display: flex;
+    flex-direction: row;
+}
+.header-item-container img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    padding-right: 8px;
+}
+.main-item-container {
+    gap: 8px;
+}
+.main-item-container button{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    background-color: #393939;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+.main-item-container button:hover{
+    background-color: #272727;
+    cursor: pointer;
+}
+.footer-item-container b{
+    width: 10rem;
+}
+.portfolio-written-lang {
+    width: 90%;
+    height: 30px;
+    object-fit: cover;
+}
+
+button:disabled {
+    border: solid 1px red;
+    color: red;
+    opacity: 0.2;
+}
+button:disabled:hover {
+    cursor: not-allowed;
+}
+
+.page-end-suggestion {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-top: solid 1px white;
+    color: white;
+}

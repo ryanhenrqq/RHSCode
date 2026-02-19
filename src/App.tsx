@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { MainHome } from './components/main'
+import { MainPortfolio } from './components/portfolio'
 
 function App() {
   const [titleColor, setTitleColor] = useState("green")
@@ -21,6 +22,7 @@ function App() {
     <>
       <DesktopHeader />
       <MainHome />
+      <MainPortfolio />
       <h1
         style={{ color: titleColor }}
       >
