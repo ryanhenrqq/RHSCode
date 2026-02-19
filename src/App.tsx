@@ -37,7 +37,7 @@ function DesktopHeader() {
     <>
       <header className='flex-hor full-head-desktop'>
           <div className="left-head flex-hor">
-              <img src="../public/logo-image.png" alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
+              <img src="./public/logo-image.png" alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
               <h1 className="title-head title-head-index">RHS Code</h1>
           </div>
           <nav className="right-head flex-hor">
