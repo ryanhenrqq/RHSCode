@@ -36,25 +36,41 @@ function DesktopHeader() {
   return (
     <>
       <header className='flex-hor full-head-desktop'>
-          <div className="left-head flex-hor">
-              <img src="./public/logo-image.png" alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
-              <h1 className="title-head title-head-index">RHS Code</h1>
-          </div>
-          <nav className="right-head flex-hor">
+        <LeftSideHeader />
+        <RightSideHeader />
+      </header>
+    </>
+  )
+}
+
+function LeftSideHeader() {
+  return (
+    <>
+      <div className="left-head flex-hor">
+            <img src="./public/logo-image.png" alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
+            <h1 className="title-head title-head-index">RHS Code</h1>
+        </div>
+    </>
+  )
+}
+
+function RightSideHeader() {
+  return (
+    <>
+      <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
-                  <button className="button-head">
+                <button className="button-head">
                       <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" />
-                  </button>
-                  <button className="button-head c-head">
+                </button>
+                <button className="button-head c-head">
                       <img src="./src/res/ico/comment.png" alt="Message" className="button-head-image" loading="lazy" />
-                  </button>
-                  <select name="lang-sel" id="lang-sel">
+                </button>
+                <select name="lang-sel" id="lang-sel">
                       <option value="port">PT</option>
                       <option value="eng">EN</option>
-                  </select>
-              </div>
-          </nav>  
-      </header>
+                </select>
+            </div>
+        </nav>  
     </>
   )
 }
