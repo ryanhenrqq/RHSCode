@@ -1,42 +1,18 @@
 import { useState, useEffect } from 'react'
-import  { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom"
 import './App.css'
 import { MainHome } from './components/main'
 import { MainPortfolio } from './components/portfolio'
 
 function App() {
-  const [titleColor, setTitleColor] = useState("green")
-  const [isGreen, setIsGreen] = useState(true)
   useEffect(() => {
-    setInterval(() => {
-      const colors = ["green", "red"]
-      if (isGreen) {
-        setTitleColor(colors[1])
-        setIsGreen(false)
-      } else {
-        setTitleColor(colors[0])
-        setIsGreen(true)
-      }
-    }, 3000)
+    console.log("caralhoooooooo")
   })
   return (
     <>
       <DesktopHeader />
       <div className="main">
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<MainHome />} />
-            <Route path='/portfolio' element={<MainPortfolio />} />
-          </Routes>
-        </BrowserRouter>
+        <MainHome />
       </div>
-      <h1
-        style={{ color: titleColor }}
-      >
-        RHS CODES
-      </h1>
-      <b>Hello, World!</b>
-      <p>Hello, React & TypeScript!</p>
     </>
   )
 }
@@ -75,13 +51,12 @@ function LeftSideHeader() {
 }
 
 function RightSideHeader() {
-  const navigate = useNavigate()
   return (
     <>
       <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
                 <button className="button-head">
-                      <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" onClick={() => navigate('/portfolio')} />
+                      <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" />
                 </button>
                 <button className="button-head c-head">
                       <img src="./src/res/ico/comment.png" alt="Message" className="button-head-image" loading="lazy" />
