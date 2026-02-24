@@ -10,6 +10,9 @@ img, svg {
     user-select: none;
     pointer-events: none;
 }
+.main {
+    padding-top: 10vh;
+}
 .full-head-desktop {
     display: flex;
     flex-direction: column;

@@ -10,6 +10,24 @@ html {
     background-color: black;
 }
 
+.lang-sel-body {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 18px;
+    width: 5rem;
+    height: 3rem;
+    background-color: #393939;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9;
+}
+
 input, textarea {
     -webkit-user-select: text;
     user-select: text;
