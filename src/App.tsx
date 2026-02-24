@@ -12,6 +12,7 @@ function App() {
       <DesktopHeader />
       <div className="main">
         <MainHome />
+        <MainPortfolio />
       </div>
     </>
   )
