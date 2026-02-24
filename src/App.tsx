@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import  { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom"
 import './App.css'
 import { MainHome } from './components/main'
 import { MainPortfolio } from './components/portfolio'
@@ -21,8 +22,14 @@ function App() {
   return (
     <>
       <DesktopHeader />
-      <MainHome />
-      <MainPortfolio />
+      <div className="main">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<MainHome />} />
+            <Route path='/portfolio' element={<MainPortfolio />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
       <h1
         style={{ color: titleColor }}
       >
@@ -68,12 +75,13 @@ function LeftSideHeader() {
 }
 
 function RightSideHeader() {
+  const navigate = useNavigate()
   return (
     <>
       <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
                 <button className="button-head">
-                      <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" />
+                      <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" onClick={() => navigate('/portfolio')} />
                 </button>
                 <button className="button-head c-head">
                       <img src="./src/res/ico/comment.png" alt="Message" className="button-head-image" loading="lazy" />
