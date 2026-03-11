@@ -8,9 +8,9 @@ export default defineConfig({
   base: "/RHSCode/",
   resolve: {
     alias : {
-      '@ico': path.resolve(__dirname, '.src/res/ico'),
-      '@logo': path.resolve(__dirname, '.src/res/logo'),
-      '@img': path.resolve(__dirname, '.src/res/img')
+      '@ico': path.resolve(__dirname, './src/res/ico'),
+      '@logo': path.resolve(__dirname, './src/res/logo'),
+      '@img': path.resolve(__dirname, './src/res/img')
     }
   }
 })

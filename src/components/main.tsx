@@ -1,5 +1,17 @@
 import "./main.css"
 
+import pyAndJs from '@logo/python-js.png'
+import python from '@logo/python.png'
+import react from '@logo/jsx.png'
+import typescript from '@logo/typescript.png'
+import java from '@logo/java.png'
+import srvMessage from '@ico/comment.png'
+import question from '@ico/question.png'
+import github from '@ico/github.png'
+import back from '@ico/return-button.png'
+
+import backgroundVSCode from '@img/vs-code-photo.jpg'
+
 export function MainHome() {
     return (
         <>
@@ -15,13 +27,13 @@ export function MainHome() {
                         <p>Experiencia prática e projetos pessoais escritos em:</p>
                         <div className="experience-tab-flex">
                             <div className="experience-tab">
-                                <img src="./src/res/logo/python.png" alt="Python Logo" draggable="false" loading="lazy" />
+                                <img src={python} alt="Python Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
                                     <div>Python</div>
                                 </div>
                             </div>
                             <div className="experience-tab">
-                                <img src="./src/res/logo/jsx.png" alt="React Logo" draggable="false" loading="lazy" />
+                                <img src={react} alt="React Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
                                     <div>React</div>
                                 </div>
@@ -30,13 +42,13 @@ export function MainHome() {
                         <p>Criando nova experiencia ativamente em:</p>
                         <div className="experience-tab-flex">
                             <div className="experience-tab">
-                                <img src="../src/res/logo/java.png" alt="Java Logo" draggable="false" loading="lazy" />
+                                <img src={java} alt="Java Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
                                     <div>Java</div>
                                 </div>
                             </div>
                             <div className="experience-tab">
-                                <img src="../src/res/logo/typescript.png" alt="TS Logo" draggable="false" loading="lazy" />
+                                <img src={typescript} alt="TS Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
                                     <div>TypeScript</div>
                                 </div>
@@ -44,16 +56,16 @@ export function MainHome() {
                         </div>
                         <p>Você pode estar vendo as fontes no meu perfil do GitHub.</p>
                         <button id="contact-now" className="button-main-top">
-                            <img src="../src/res/ico/comment.png" alt="GitHub" className="button-main-image" loading="lazy" />
+                            <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
                             <span>Contate-me</span>
                         </button>
                     </div>
                     <div className="image-side-main">
-                        <img src="../src/res/logo/python-js.png" alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />
+                        <img src={pyAndJs} alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />
                     </div>
                 </div>
                 <div className="flex-ver main-container-second-tb">
-                    <img src="../src/res/img/vs-code-photo.jpg" alt="VS Code Photo" className="secondTb-img-back" loading="lazy" />
+                    <img src={backgroundVSCode} alt="VS Code Photo" className="secondTb-img-back" loading="lazy" />
                     <div className="flex-ver child-container-second-tb">
                         <h3 className="secTb-title">Áreas de Atuação</h3>
                         <div className="secondTb">
@@ -73,7 +85,7 @@ export function MainHome() {
                     <div className="flex-ver child-container-thirty-tb">
                         <div className="thirtyTb">
                             <div className="image-side-main">
-                                <img src="../src/res/ico/question.png" alt="" className="main-splash-img" loading="lazy" />
+                                <img src={question} alt="" className="main-splash-img" loading="lazy" />
                             </div>
                             <div className="flex-ver index-txt">
                                 <p>Eu faço um trabalho de organização impecavel em seu proximo site! Todos os codigos ficam bem declarados e organizados em cada canto, fazendo assim uma manutenção posterior muito mais facil e amigavel pro seu bolso.</p>
@@ -91,15 +103,15 @@ export function MainHome() {
                         gap: "12px"}}
                         >
                         <button className="button-head">
-                            <img src="./src/res/ico/github.png" alt="GitHub" className="button-head-image" loading="lazy" />
+                            <img src={github} alt="GitHub" className="button-head-image" loading="lazy" />
                             <p>Github</p>
                         </button>
                         <button className="button-head">
-                            <img src="./src/res/ico/comment.png" alt="Message" className="button-head-image" loading="lazy" />
+                            <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
                             <p id="lang-header-contact">Contato</p>
                         </button>
                         <button className="button-head" disabled>
-                            <img src="./src/res/ico/return-button.png" alt="Return" className="button-head-image" style={{ filter: "invert(1)"}} loading="lazy" />
+                            <img src={back} alt="Return" className="button-head-image" style={{ filter: "invert(1)"}} loading="lazy" />
                             <p>Voltar</p>
                         </button>
                 </div>

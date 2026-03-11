@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { MainHome } from './components/main'
-import { MainPortfolio } from './components/portfolio'
+
+import greenLogo from '/logo-image.png'
+import photoLogo from '/my-photo.jpg'
+import srvPortfolio from '@ico/services-portfolio.png'
+import srvMessage from '@ico/comment.png'
 
 function App() {
   useEffect(() => {
-    console.log("caralhoooooooo")
+    console.log("started app.tsx")
   })
   return (
     <>
       <DesktopHeader />
       <div className="main">
         <MainHome />
-        <MainPortfolio />
       </div>
     </>
   )
@@ -30,10 +33,10 @@ function DesktopHeader() {
 }
 
 function LeftSideHeader() {
-  const [photoUrl, setPhotoUrl] = useState("./public/logo-image.png")
+  const [photoUrl, setPhotoUrl] = useState(`${greenLogo}`)
   useEffect(() => {
     setInterval(() => {
-      const sources = ["./public/logo-image.png", "./public/my-photo.jpg"]
+      const sources = [greenLogo, photoLogo]
       if (photoUrl == sources[0]) {
         setPhotoUrl(sources[1])
       } else {
@@ -57,10 +60,10 @@ function RightSideHeader() {
       <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
                 <button className="button-head">
-                      <img src="./src/res/ico/services-portfolio.png" alt="Service Portfólio" className="button-head-image" loading="lazy" />
+                      <img src={srvPortfolio} alt="Service Portfólio" className="button-head-image" loading="lazy" />
                 </button>
                 <button className="button-head c-head">
-                      <img src="./src/res/ico/comment.png" alt="Message" className="button-head-image" loading="lazy" />
+                      <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
                 </button>
                 <select name="lang-sel" id="lang-sel">
                       <option value="port">PT</option>
