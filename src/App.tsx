@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom'
+
 import { MainHome } from './components/main'
 
 import greenLogo from '/logo-image.png'
@@ -7,18 +9,24 @@ import photoLogo from '/my-photo.jpg'
 import srvPortfolio from '@ico/services-portfolio.png'
 import srvMessage from '@ico/comment.png'
 
+const route = createHashRouter([
+  {
+    path: "/",
+    element: <DesktopHeader />,
+    children: [
+      {
+        index: true,
+        element: <MainHome />
+      }
+    ]
+  }
+])
+
 function App() {
   useEffect(() => {
     console.log("started app.tsx")
   })
-  return (
-    <>
-      <DesktopHeader />
-      <div className="main">
-        <MainHome />
-      </div>
-    </>
-  )
+  return <RouterProvider router={route} />
 }
 
 function DesktopHeader() {
@@ -28,6 +36,9 @@ function DesktopHeader() {
         <LeftSideHeader />
         <RightSideHeader />
       </header>
+      <main className='main'>
+        <Outlet />
+      </main>
     </>
   )
 }
