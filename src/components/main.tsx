@@ -1,4 +1,5 @@
 import "./main.css"
+import { Link } from "react-router-dom"
 
 import pyAndJs from '@logo/python-js.png'
 import python from '@logo/python.png'
@@ -55,10 +56,10 @@ export function MainHome() {
                             </div>
                         </div>
                         <p>Você pode estar vendo as fontes no meu perfil do GitHub.</p>
-                        <button id="contact-now" className="button-main-top">
+                        <Link to="/direct" id="contact-now" className="button-main-top">
                             <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
                             <span>Contate-me</span>
-                        </button>
+                        </Link>
                     </div>
                     <div className="image-side-main">
                         <img src={pyAndJs} alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />

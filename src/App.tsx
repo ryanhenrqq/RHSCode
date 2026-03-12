@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom'
+import { createHashRouter, RouterProvider, Outlet, Link, useNavigate } from 'react-router-dom'
 
 import { MainHome } from './components/main'
+import { MainPortfolio } from './components/portfolio'
+import { Direct } from './components/direct'
 
 import greenLogo from '/logo-image.png'
 import photoLogo from '/my-photo.jpg'
@@ -17,6 +19,14 @@ const route = createHashRouter([
       {
         index: true,
         element: <MainHome />
+      },
+      {
+        path: "/portfolio",
+        element: <MainPortfolio />
+      },
+      {
+        path: "/direct",
+        element: <Direct />
       }
     ]
   }
@@ -44,6 +54,7 @@ function DesktopHeader() {
 }
 
 function LeftSideHeader() {
+  const navi = useNavigate()
   const [photoUrl, setPhotoUrl] = useState(`${greenLogo}`)
   useEffect(() => {
     setInterval(() => {
@@ -57,7 +68,7 @@ function LeftSideHeader() {
   })
   return (
     <>
-      <div className="left-head flex-hor">
+      <div className="left-head flex-hor" onClick={() => navi('/')}>
           <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
           <h1 className="title-head title-head-index">RHS Code</h1>
       </div>
@@ -70,12 +81,12 @@ function RightSideHeader() {
     <>
       <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
-                <button className="button-head">
+                <Link to="/portfolio" className="button-head">
                       <img src={srvPortfolio} alt="Service Portfólio" className="button-head-image" loading="lazy" />
-                </button>
-                <button className="button-head c-head">
+                </Link>
+                <Link to="/direct" className="button-head c-head">
                       <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
-                </button>
+                </Link>
                 <select name="lang-sel" id="lang-sel">
                       <option value="port">PT</option>
                       <option value="eng">EN</option>

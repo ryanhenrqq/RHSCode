@@ -1,20 +1,33 @@
 import "./portfolio.css"
 
+import github from '@ico/github.png'
+
 export function MainPortfolio() {
+    function handleRedirects(target: number) {
+        switch (target) {
+            case 0:
+                window.location.href = "https://github.com/ryanhenrqq"
+                break
+            case 1:
+                alert("Hello!")
+                break
+
+        }
+    }
     return (
         <>
             <main className="flex-ver gapper">
                 <div className="portfolio-grid">
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
-                            <img src="../src/res/ico/github.png" alt="GitHub" style={{filter: "invert(1)"}} loading="lazy" />
+                            <img src={github} alt="GitHub" style={{filter: "invert(1)"}} loading="lazy" />
                             <div className="flex-ver">
                                 <b>GitHub</b>
                                 <p>Meu perfil profissional do GitHub, contendo todo o meu portfólio.</p>
                             </div>
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button>Abrir</button>
+                            <button onClick={() => handleRedirects(0)}>Abrir</button>
                         </div>
                     </div>
                 </div>

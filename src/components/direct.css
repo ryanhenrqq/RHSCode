@@ -1,0 +1,45 @@
+.contact-email-form, .report-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 80%;
+    margin-bottom: 8vh;
+}
+.contact-email-form input, .report-email-form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 18px;
+}
+#name-email {
+    width: 100%;
+}
+#phone-email {
+    width: 60%;
+}
+#type-service-email {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 18px;
+}
+#content-email {
+    width: 100%;
+    height: 10rem;
+    padding: 10px;
+    border: none;
+    border-radius: 18px;
+    resize: none;
+}
+.contact-email-form button, .report-email-form button {
+    width: 100%;
+}
+.form-backpanel {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flex-ver small{
+    margin: 12px;
+}
