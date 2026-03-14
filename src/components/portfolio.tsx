@@ -2,8 +2,32 @@ import "./portfolio.css"
 
 import github from '@ico/github.png'
 
+type RedirectConfigs = {
+    // type safety scheme
+    type: "internal" | "external",
+    url: string
+}
+
+const REDIRECT_MAP: Record<string, RedirectConfigs> = {
+    github: {type: 'external', url: 'https://github.com/ryanhenrqq/'},
+
+    // Direct to website - links
+    flodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
+    todotasks: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
+    climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
+
+    // Source codes (sc) - to github
+    floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
+    ooniquepasssc: {type: 'external', url: 'https://github.com/ryanhenrqq/OoniquePass'},
+    kalccalculadorasc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadora'},
+    todotaskssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks'},
+    climaopenweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/ClimaComOpenWeather'},
+    kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'}
+}
+
 export function MainPortfolio() {
-    function handleRedirects(target: number) {
+    function handleRedirects(target: number) { 
+        // temporary function only for testing
         switch (target) {
             case 0:
                 window.location.href = "https://github.com/ryanhenrqq"
@@ -21,10 +45,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src={github} alt="GitHub" style={{filter: "invert(1)"}} loading="lazy" />
-                            <div className="flex-ver">
-                                <b>GitHub</b>
-                                <p>Meu perfil profissional do GitHub, contendo todo o meu portfólio.</p>
-                            </div>
+                            <HeaderNameGenerator name='GitHub' description='Meu perfil profissional do GitHub, contendo todo o meu portfólio.' />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button onClick={() => handleRedirects(0)}>Abrir</button>
@@ -36,10 +57,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/FloodTheCookie/src/res/fav/favicon.png" alt="" loading="lazy" />
-                            <div className="flex-ver">
-                                <b>FloodTheCookie</b>
-                                <p>Jogo Point-n-Click interativo e relaxante!</p>
-                            </div>
+                            <HeaderNameGenerator name='FloodTheCookie' description="Jogo Point-n-Click interativo e relaxante!" />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button>Abrir</button>
@@ -54,10 +72,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://raw.githubusercontent.com/ryanhenrqq/OoniquePass/main/res/favicon.png" />
-                            <div className="flex-ver">
-                                <b>OoniquePass</b>
-                                <p>Gerador de senhas simples e objetivo.</p>
-                            </div>
+                            <HeaderNameGenerator name="OoniquePass" description="Gerador de senhas simples e objetivo." />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
@@ -76,10 +91,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" alt="" style={{filter: "invert(1)" }}loading="lazy" />
-                            <div className="flex-ver">
-                                <b>KalcCalculadora</b>
-                                <p>Aplicativo web de calculadora e formulas.</p>
-                            </div>
+                            <HeaderNameGenerator name="KalcCalculadora" description="Aplicativo web de calculadora e formulas." />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
@@ -94,10 +106,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
-                            <div className="flex-ver">
-                                <b>ToDoTasks</b>
-                                <p>Crie tarefas e lembretes pelo navegador!</p>
-                            </div>
+                            <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador!" />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button>Abrir</button>
@@ -112,10 +121,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/ClimaComOpenWeather/components/res/icon/sun.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
-                            <div className="flex-ver">
-                                <b>Clima com OpenWeather</b>
-                                <p>Demo de um App de Clima pronto para a API OpenWeather</p>
-                            </div>
+                            <HeaderNameGenerator name="Clima com OpenWeather" description="Demo de um App de Clima pronto para a API OpenWeather" />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button>Abrir</button>
@@ -134,10 +140,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://img.icons8.com/ios-filled/100/no-image.png" alt="" style={{filter: "invert(1)"}} loading="lazy" />
-                            <div className="flex-ver">
-                                <b>KalcCalculadora Lite</b>
-                                <p>Aplicativo android de calculadora e formulas.</p>
-                            </div>
+                            <HeaderNameGenerator name="KalcCalculadora Lite" description="Aplicativo android de calculadora e formulas." />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
@@ -152,5 +155,19 @@ export function MainPortfolio() {
                 </div>
             </main>    
         </>
+    )
+}
+
+interface PropsDefinerHeader {
+    name: string,
+    description: string
+}
+
+function HeaderNameGenerator({name, description}: PropsDefinerHeader) {
+    return (
+        <div className="flex-ver">
+            <b>{name}</b>
+            <p>{description}</p>
+        </div>
     )
 }
