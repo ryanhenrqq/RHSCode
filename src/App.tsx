@@ -35,7 +35,7 @@ const route = createHashRouter([
 function App() {
   useEffect(() => {
     console.log("started app.tsx")
-  })
+  }, [])
   return <RouterProvider router={route} />
 }
 
@@ -77,6 +77,9 @@ function LeftSideHeader() {
 }
 
 function RightSideHeader() {
+  function handleTempUnvailable() {
+    alert("Não disponivel. Aguarde uma atualização futura.")
+  }
   return (
     <>
       <nav className="right-head flex-hor">
@@ -87,7 +90,7 @@ function RightSideHeader() {
                 <Link to="/direct" className="button-head c-head">
                       <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
                 </Link>
-                <select name="lang-sel" id="lang-sel">
+                <select name="lang-sel" id="lang-sel" onChange={handleTempUnvailable}>
                       <option value="port">PT</option>
                       <option value="eng">EN</option>
                 </select>
