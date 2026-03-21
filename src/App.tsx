@@ -42,12 +42,15 @@ function App() {
 function DesktopHeader() {
   return (
     <>
-      <header className='flex-hor full-head-desktop'>
-        <LeftSideHeader />
-        <RightSideHeader />
-      </header>
-      <main className='main'>
-        <Outlet />
+      <main>
+        <header className='flex-hor full-head-desktop'>
+          <LeftSideHeader />
+          <RightSideHeader />
+        </header>
+        <div className="main">
+          <Outlet />
+        </div>
+        
       </main>
     </>
   )
