@@ -114,8 +114,9 @@ function FooterGlobal() {
     <>
       <footer id="pt-version-footer-index">
         <div className="flex-hor">
-          <a href="./pg/about.html">Sobre</a>
+          <a>Sobre</a>
           <a href="https://ko-fi.com/rhscode">Doação</a>
+          <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
         </div>
         <div className="flex-hor align last-line-footer">
           <small><a href="#">© 2024 RHS Code </a> - é uma marca digital criada por Ryan Henrique</small>
