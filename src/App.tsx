@@ -5,6 +5,7 @@ import { createHashRouter, RouterProvider, Outlet, Link, useNavigate } from 'rea
 import { MainHome } from './components/main'
 import { MainPortfolio } from './components/portfolio'
 import { Direct } from './components/direct'
+import { NotFoundPage } from './components/404'
 
 import greenLogo from '/logo-image.png'
 import photoLogo from '/my-photo.jpg'
@@ -27,6 +28,10 @@ const route = createHashRouter([
       {
         path: "/direct",
         element: <Direct />
+      },
+      {
+        path:"*",
+        element: <NotFoundPage />
       }
     ]
   }
@@ -50,7 +55,9 @@ function DesktopHeader() {
         <div className="main">
           <Outlet />
         </div>
-        
+        <footer>
+          <FooterGlobal />
+        </footer>
       </main>
     </>
   )
@@ -60,15 +67,14 @@ function LeftSideHeader() {
   const navi = useNavigate()
   const [photoUrl, setPhotoUrl] = useState(`${greenLogo}`)
   useEffect(() => {
-    setInterval(() => {
-      const sources = [greenLogo, photoLogo]
-      if (photoUrl == sources[0]) {
-        setPhotoUrl(sources[1])
-      } else {
-        setPhotoUrl(sources[0])
-      }
-    }, 3000)
-  })
+    const sources = [greenLogo, photoLogo]
+    const changer = setInterval(() => {
+        setPhotoUrl((prev) => (
+          prev === sources[0] ? sources[1] : sources[0]
+        ))
+      }, 5000)
+    return clearInterval(changer)
+  }, [])
   return (
     <>
       <div className="left-head flex-hor" onClick={() => navi('/')}>
@@ -87,10 +93,10 @@ function RightSideHeader() {
     <>
       <nav className="right-head flex-hor">
               <div id="scrool-head" className="flex-hor right-head-buttons-parent">
-                <Link to="/portfolio" className="button-head">
+                <Link to="/portfolio" className="button-head gaussian-blur-darker">
                       <img src={srvPortfolio} alt="Service Portfólio" className="button-head-image" loading="lazy" />
                 </Link>
-                <Link to="/direct" className="button-head c-head">
+                <Link to="/direct" className="button-head c-head  gaussian-blur-darker">
                       <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
                 </Link>
                 <select name="lang-sel" id="lang-sel" onChange={handleTempUnvailable}>
@@ -99,6 +105,22 @@ function RightSideHeader() {
                 </select>
             </div>
         </nav>  
+    </>
+  )
+}
+
+function FooterGlobal() {
+  return (
+    <>
+      <footer id="pt-version-footer-index">
+        <div className="flex-hor">
+          <a href="./pg/about.html">Sobre</a>
+          <a href="https://ko-fi.com/rhscode">Doação</a>
+        </div>
+        <div className="flex-hor align last-line-footer">
+          <small><a href="#">© 2024 RHS Code </a> - é uma marca digital criada por Ryan Henrique</small>
+        </div>
+      </footer>
     </>
   )
 }

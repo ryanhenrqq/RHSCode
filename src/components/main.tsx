@@ -14,6 +14,11 @@ import back from '@ico/return-button.png'
 import backgroundVSCode from '@img/vs-code-photo.jpg'
 
 export function MainHome() {
+    const gaussianBlurDarker = {
+        backgroundColor: "#0000007d",
+        backdropFilter: "blur(5px)",
+        border: "solid 1px rgba(255, 255, 255, 0.492)"
+    }
     return (
         <>
             <main className="flex-ver" id="pt-version-index">
@@ -56,7 +61,7 @@ export function MainHome() {
                             </div>
                         </div>
                         <p>Você pode estar vendo as fontes no meu perfil do GitHub.</p>
-                        <Link to="/direct" id="contact-now" className="button-main-top">
+                        <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
                             <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
                             <span>Contate-me</span>
                         </Link>
