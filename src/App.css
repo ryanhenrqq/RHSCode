@@ -21,7 +21,7 @@ img, svg {
     -webkit-backdrop-filter: blur(5px);
 }
 .main {
-    padding-top: 12vh;
+    padding-top: 15vh;
     animation: anim-lineUp 1s ease;
 
     background: #000000;

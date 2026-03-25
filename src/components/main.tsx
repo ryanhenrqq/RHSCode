@@ -100,28 +100,6 @@ export function MainHome() {
                         </div>
                     </div>
                 </div>
-                <div className="page-end-suggestion">
-                    <h3>Você chegou ao final da pagina :D</h3>
-                    <h3>Você ainda pode tentar:</h3>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "row", 
-                        gap: "12px"}}
-                        >
-                        <button className="button-head">
-                            <img src={github} alt="GitHub" className="button-head-image" loading="lazy" />
-                            <p>Github</p>
-                        </button>
-                        <button className="button-head">
-                            <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
-                            <p id="lang-header-contact">Contato</p>
-                        </button>
-                        <button className="button-head" disabled>
-                            <img src={back} alt="Return" className="button-head-image" style={{ filter: "invert(1)"}} loading="lazy" />
-                            <p>Voltar</p>
-                        </button>
-                </div>
-            </div>
             </main>
         </>
     )
