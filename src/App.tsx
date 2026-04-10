@@ -48,13 +48,8 @@ function DesktopHeader() {
   return (
     <>
       <main>
-        <header className='flex-hor full-head-desktop'>
-          <LeftSideHeader />
-          <RightSideHeader />
-        </header>
-        <header className="full-head-mobile">
-
-        </header>
+        <FullHeaderDesktop classNaming="desktopView full-head-desktop" />
+        <FullHeaderMobile classNaming="mobileView full-head-mobile" />
         <div className="main">
           <Outlet />
         </div>
@@ -63,6 +58,52 @@ function DesktopHeader() {
         </footer>
       </main>
     </>
+  )
+}
+
+type FullHeaderDesktopProps = {
+  classNaming?: string
+}
+function FullHeaderDesktop({classNaming}: FullHeaderDesktopProps) {
+  return (
+    <>
+        <header className={classNaming}>
+          <LeftSideHeader />
+          <RightSideHeader />
+        </header>
+    </>
+  )
+}
+
+type FullHeaderMobileProps = {
+  classNaming?: string
+}
+function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
+  const navi = useNavigate()
+  return (
+    <header className={classNaming}>
+        <div className="left-head flex-hor">
+            <div className="right-head-buttons-parent">
+                <Link to="/portfolio" className="button-head gaussian-blur-darker">
+                      <img src={srvPortfolio} alt="Service Portfólio" className="button-head-image" loading="lazy" />
+                </Link>
+            </div>
+        </div>
+        <div onClick={() => navi('/')}>
+            <h1 className="title-head title-head-index">RHS Code</h1>
+        </div>
+        <nav className="right-head flex-hor">
+            <div id="scrool-head" className="flex-hor right-head-buttons-parent">
+                <Link to="/direct" className="button-head c-head gaussian-blur-darker">
+                      <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
+                </Link>
+                <select name="lang-sel" id="lang-sel">
+                    <option value="port">PT</option>
+                    <option value="eng">EN</option>
+                </select>
+            </div>
+        </nav>
+    </header>
   )
 }
 
