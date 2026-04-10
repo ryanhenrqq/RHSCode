@@ -243,6 +243,19 @@ footer div a:hover {
         display: block;
     }
     .title-head {
-        font-size: 24px;
+        font-size: 28px;
+    }
+    .image-head {
+        display: none;
+    }
+    .button-head {
+        padding: 8px;
+    }
+    .button-head img {
+        width: 28px;
+        height: 28px;
+    }
+    .button-head p{
+        font-size: 10px;
     }
 }
