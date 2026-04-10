@@ -52,6 +52,9 @@ function DesktopHeader() {
           <LeftSideHeader />
           <RightSideHeader />
         </header>
+        <header className="full-head-mobile">
+
+        </header>
         <div className="main">
           <Outlet />
         </div>
@@ -65,6 +68,16 @@ function DesktopHeader() {
 
 function LeftSideHeader() {
   const navi = useNavigate()
+  return (
+    <>
+      <div className="left-head flex-hor" onClick={() => navi('/')}>
+          <PhotoLogoChanger />
+      </div>
+    </>
+  )
+}
+
+function PhotoLogoChanger() {
   const [photoUrl, setPhotoUrl] = useState(`${greenLogo}`)
   useEffect(() => {
     const sources = [greenLogo, photoLogo]
@@ -77,10 +90,8 @@ function LeftSideHeader() {
   }, [])
   return (
     <>
-      <div className="left-head flex-hor" onClick={() => navi('/')}>
-          <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
-          <h1 className="title-head title-head-index">RHS Code</h1>
-      </div>
+      <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
+      <h1 className="title-head title-head-index">RHS Code</h1>
     </>
   )
 }
@@ -112,13 +123,13 @@ function RightSideHeader() {
 function FooterGlobal() {
   return (
     <>
-      <footer id="pt-version-footer-index">
-        <div className="flex-hor">
+      <footer id="pt-version-footer-index gaussian-blur">
+        <div className="1">
           <a>Sobre</a>
           <a href="https://ko-fi.com/rhscode">Doação</a>
           <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
         </div>
-        <div className="flex-hor align last-line-footer">
+        <div className="1 align last-line-footer">
           <small><a href="#">© 2024 RHS Code </a> - é uma marca digital criada por Ryan Henrique</small>
         </div>
       </footer>
