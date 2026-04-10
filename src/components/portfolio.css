@@ -69,3 +69,9 @@ button:disabled:hover {
     border-top: solid 1px white;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
