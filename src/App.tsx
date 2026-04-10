@@ -97,10 +97,6 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
                 <Link to="/direct" className="button-head c-head gaussian-blur-darker">
                       <img src={srvMessage} alt="Message" className="button-head-image" loading="lazy" />
                 </Link>
-                <select name="lang-sel" id="lang-sel">
-                    <option value="port">PT</option>
-                    <option value="eng">EN</option>
-                </select>
             </div>
         </nav>
     </header>

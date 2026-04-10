@@ -242,4 +242,7 @@ footer div a:hover {
     .lang-sel-body {
         display: block;
     }
+    .title-head {
+        font-size: 24px;
+    }
 }

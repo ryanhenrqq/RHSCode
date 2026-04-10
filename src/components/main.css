@@ -155,7 +155,7 @@ img, svg {
     align-items: center;
     justify-content: center;
     padding: 18px;
-    width: 100%;
+    width: 93%;
     border-radius: 24px;
     box-shadow:  2px 2px 4px black;
     background-color: #393939;
@@ -298,4 +298,71 @@ img, svg {
 }
 .thirtyTb img {
     filter: invert(0.5);
+}
+
+@media (max-width: 1420px) {
+    .index-txt {
+        width: 95%;
+    }
+    .index-txt h3 {
+        font-size: 44px;
+    }
+    .image-side-main {
+        display: none;
+    }
+}
+
+@media (max-width: 1048px) {
+    .index-txt h3 {
+        font-size: 41px;
+    }
+    .experience-tab img {
+        width: 20px;
+        height: 20px;
+    }
+    .right-experience-tab div {
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+    .lang-sel-body {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .index-txt h3 {
+        font-size: 28px;
+    }
+    .index-txt p {
+        font-size: 16px;
+    }
+    .button-main-top {
+        font-size: 20px;
+    }
+    .experience-tab-flex {
+        width: 90%;
+        flex-direction: column;
+    }
+    .experience-tab {
+        width: 90%;
+        height: 2rem;
+    }
+    .experience-tab div {
+        font-size: 18px;
+    }
+    .secTb-title {
+        font-size: 30px;
+    }
+    .secondTb {
+        flex-direction: column;
+        margin-bottom: 6vh;
+    }
+    .secondTb div p {
+        margin: 12px;
+    }
+    .thirtyTb-title {
+        font-size: 21px;
+    }
+    .thirtyTb p {
+        font-weight: 400;
+    }
 }
