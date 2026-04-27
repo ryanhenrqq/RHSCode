@@ -8,8 +8,6 @@ import typescript from '@logo/typescript.png'
 import java from '@logo/java.png'
 import srvMessage from '@ico/comment.png'
 import question from '@ico/question.png'
-import github from '@ico/github.png'
-import back from '@ico/return-button.png'
 
 import backgroundVSCode from '@img/vs-code-photo.jpg'
 
