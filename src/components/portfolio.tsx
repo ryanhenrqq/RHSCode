@@ -14,7 +14,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     // Direct to website - links
     floodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
     todotasks: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
-    climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
+    climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ClimaComOpenWeather/'},
 
     // Source codes (sc) - to github
     floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
@@ -77,7 +77,7 @@ export function MainPortfolio() {
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('ooniquepasssc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -96,7 +96,7 @@ export function MainPortfolio() {
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('kalccalculadorasc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -110,8 +110,8 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador!" />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('todotasks')}>Abrir</button>
+                            <button onClick={() => handleRedirect('todotaskssc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -125,8 +125,8 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name="Clima com OpenWeather" description="Demo de um App de Clima pronto para a API OpenWeather" />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('climaopenweather')}>Abrir</button>
+                            <button onClick={() => handleRedirect('climaopenweathersc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -145,7 +145,7 @@ export function MainPortfolio() {
                         </div>
                         <div className="flex-ver main-item-container">
                             <button disabled>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('kalccalculadoralitesc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
