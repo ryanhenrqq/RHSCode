@@ -12,7 +12,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     github: {type: 'external', url: 'https://github.com/ryanhenrqq/'},
 
     // Direct to website - links
-    flodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
+    floodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
     todotasks: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
     climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
 
@@ -25,19 +25,20 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'}
 }
 
-export function MainPortfolio() {
-    function handleRedirects(target: number) { 
-        // temporary function only for testing
-        switch (target) {
-            case 0:
-                window.location.href = "https://github.com/ryanhenrqq"
-                break
-            case 1:
-                alert("Hello!")
-                break
-
-        }
+const handleRedirect = (key: string) => {
+    const config = REDIRECT_MAP[key]
+    if (!config) {
+        console.error(`Configuração de redirecionamento não encontrada para ${key}`);
+        return;
     }
+    if (config.type === 'external') {
+        window.open(config.url, '_blank', 'noopener,noreferrer'); //Abre em nova aba
+    } else {
+        // reservado a links internos
+    }
+}
+
+export function MainPortfolio() {
     return (
         <>
             <main className="flex-ver gapper">
@@ -48,7 +49,7 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name='GitHub' description='Meu perfil profissional do GitHub, contendo todo o meu portfólio.' />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button onClick={() => handleRedirects(0)}>Abrir</button>
+                            <button onClick={() => handleRedirect('github')}>Abrir</button>
                         </div>
                     </div>
                 </div>
@@ -60,8 +61,8 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name='FloodTheCookie' description="Jogo Point-n-Click interativo e relaxante!" />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button>Abrir</button>
-                            <button>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('floodthecookie')}>Abrir</button>
+                            <button onClick={() => handleRedirect('floodthecookiesc')}>Visitar Codigo-Fonte</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
