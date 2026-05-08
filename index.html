@@ -8,6 +8,31 @@
     <title>RHS Code</title>
   </head>
   <body>
+    <div id="loading-screen">
+      <h1>RHS Code</h1>
+
+      <p>Inicializando script...</p>
+
+      <p class="loading-warning">
+        Se esta tela permanecer por muito tempo,
+        tente recarregar a página.
+      </p>
+    </div>
+    <noscript>
+    <style>
+        #loading-screen {
+          display: none;
+        }
+      </style>
+
+      <div class="noscript-screen">
+        <h1>JavaScript necessário</h1>
+
+        <p>
+          Este site depende de JavaScript para funcionar corretamente.
+        </p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

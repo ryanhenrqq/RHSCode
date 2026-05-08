@@ -12,6 +12,12 @@ import photoLogo from '/my-photo.jpg'
 import srvPortfolio from '@ico/services-portfolio.png'
 import srvMessage from '@ico/comment.png'
 
+const loadingScreen = document.getElementById("loading-screen")
+
+if (loadingScreen) {
+  loadingScreen.remove()
+}
+
 const route = createHashRouter([
   {
     path: "/",
