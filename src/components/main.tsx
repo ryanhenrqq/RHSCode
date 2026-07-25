@@ -61,7 +61,7 @@ export function MainHome() {
                         <p>Você pode estar vendo as fontes no meu perfil do GitHub.</p>
                         <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
                             <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                            <span>Contate-me</span>
+                            <div className="button-main-top-txt">Contate-me</div>
                         </Link>
                     </div>
                     <div className="image-side-main">
