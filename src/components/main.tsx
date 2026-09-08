@@ -1,6 +1,8 @@
 import "./main.css"
 import { Link } from "react-router-dom"
 
+import { RedirectHeadLink } from "../App"
+
 import pyAndJs from '@logo/python-js.png'
 import python from '@logo/python.png'
 import react from '@logo/jsx.png'
@@ -9,6 +11,7 @@ import java from '@logo/java.png'
 import srvMessage from '@ico/comment.png'
 //import question from '@ico/question.png'
 
+import greenLogo from '/logo-image.png'
 import backgroundVSCode from '@img/vs-code-photo.jpg'
 import macbookDesk from '@img/panoramic-laptop.png'
 
@@ -27,7 +30,17 @@ export function MainHome() {
                 </select>
                 <div className="flex-hor">
                     <div className="flex-ver index-txt">
-                        <h3>Conheça o RHS Code</h3>
+                        
+                        <div className="flex-hor header-main-splash" style={{display: "none"}}>
+                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
+                            <h3>Conheça o RHS Code</h3>
+                            <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
+                        </div>
+
+                        <div className="flex-hor">
+                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
+                            <h3>Conheça o <b style={{ color: "#338119"}}>RHS Code</b></h3>
+                        </div>
                         <p>Sou um Programador Front End, focado em criar as melhores e mais amigáveis interfaces de usuário para a sua empresa. Consigo criar as melhores soluções para elevar o nivel de seu website profissional, focando na simplicidade de comandos simples, mas poderosos!</p>
                         <p>Experiencia prática e projetos pessoais escritos em:</p>
                         <div className="experience-tab-flex">

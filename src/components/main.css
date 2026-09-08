@@ -43,6 +43,14 @@ img, svg {
     display: none;
 }
 
+.image-head-inside-main {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding-right: 24px;
+    transition: opacity 0.8s ease-in-out;
+}
 .flex-hor {
     display: flex;
     flex-direction: row;
