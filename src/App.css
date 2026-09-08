@@ -51,15 +51,17 @@ img, svg {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 96%;
     border-radius: 24px;
-    height: 6vh;
     background-color: #0000007d;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     top: 0;
-    margin: 16px;
-    padding: 14px;
+    right: 3px;
+    left: 3px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     position: fixed;
     z-index: 9;
 }
