@@ -27,7 +27,7 @@ export function MainHome() {
                 </select>
                 <div className="flex-hor">
                     <div className="flex-ver index-txt">
-                        <h3>Olá, eu sou o Ryan 👋</h3>
+                        <h3>Conheça o RHS Code</h3>
                         <p>Sou um Programador Front End, focado em criar as melhores e mais amigáveis interfaces de usuário para a sua empresa. Consigo criar as melhores soluções para elevar o nivel de seu website profissional, focando na simplicidade de comandos simples, mas poderosos!</p>
                         <p>Experiencia prática e projetos pessoais escritos em:</p>
                         <div className="experience-tab-flex">

@@ -57,6 +57,8 @@ img, svg {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    gap: 16px;
 }
 .experience-tab {
     display: flex;
@@ -65,13 +67,16 @@ img, svg {
     align-items: center;
     text-align: left;
     gap: 10px;
-    width: 100%;
-    margin: 12px;
-    padding: 16px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid 2px rgb(117, 117, 117);
     border-radius: 24px;
-    background-color: #4b6686;
+    background: linear-gradient(135deg, #000000 28%, #002b2b 100%);
 }
 .experience-tab:hover {
+    background: linear-gradient(135deg, #000000 28%, #00afaf 100%);
     cursor: pointer;
 }
 .right-experience-tab div {
@@ -347,7 +352,6 @@ img, svg {
         font-size: 20px;
     }
     .experience-tab-flex {
-        width: 90%;
         flex-direction: column;
     }
     .experience-tab {
