@@ -1,3 +1,35 @@
+span{
+    background-color: #060606;
+    border: solid 1px white;
+    border-radius: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+span h1{
+    font-size: 14px;
+}
+span button {
+    background-color: #060606;
+    border: solid 1px white;
+    border-radius: 30px;
+    padding: 2%;
+}
+span button:hover{background-color: #fff;color: #010101;cursor: pointer;}
+.flex-hor{display: flex;flex-direction: row;gap: 12px;}
+.flex-ver{display: flex;flex-direction: column;gap: 12px;}
+.introduction-explaining-sub{line-height: 1;}
+.introduction-explaining-sub i {
+    font-size: 11px;
+    
+}
+input, select, select option, textarea{color: black;}
 .contact-email-form, .report-email-form {
     display: flex;
     flex-direction: column;
@@ -14,8 +46,8 @@
 #name-email {
     width: 100%;
 }
-#phone-email {
-    width: 60%;
+#phone-ddd-email{
+    max-width: 20%;
 }
 #type-service-email {
     width: 100%;
@@ -42,4 +74,10 @@
 }
 .flex-ver small{
     margin: 12px;
+}
+/*Compartibilidade e minimalismo*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

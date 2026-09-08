@@ -10,28 +10,52 @@ export function Direct() {
     }
     return (
         <>
+            <span className='flex-ver'>
+                <b>Para evitar perca de tempo, esse formulário está desativado temporariamente</b>
+                <button onClick={tempNotWorking}>Modo Compartibilidade</button>
+            </span>
             <form className="contact-email-form" id="contact-email-form" autoComplete="off">
-                <h3></h3>
-                <label htmlFor="name-email">Nome e Sobrenome:</label>
-                <input type="text" name="name-email" id="name-email" placeholder="Nome" required />
-                <label htmlFor="name-email">Email:</label>
-                <input type="email" name="form-email" id="form-email" placeholder="E-mail" required />
-                <label htmlFor="name-email">Telefone:</label>
-                <div className="flex-hor" style={{ gap: "10px;"}}>
-                    <input type="number" name="phone-ddd-email" id="phone-ddd-email" max="999" min="10" placeholder="DDD" style={{ width: "2.5rem;"}} required />
-                    <input type="number" name="phone-email" id="phone-email" placeholder="Numero de Telefone" required />
+                <div className='introduction-explaining flex-ver'>
+                    <h3>Contato direto a meus serviços</h3>
+                    <i>Para entrar em contato, preencha com calma todos os campos abaixo, para que eu possa identifica-lo e de dar um retorno o mais breve possivel!</i>
                 </div>
-                <label htmlFor="name-email">Tipo de requisição:</label>
-                <select name="type-service-email" id="type-service-email" required>
-                    <option value="" selected disabled>Escolha...</option>
-                    <option value="professional-site-creation">Serviço de criação de site profissional</option>
-                    <option value="software-related-service">Serviço em software (Formatação, limpeza, etc)</option>
-                    <option value="partnership">Parceria de serviços</option>
-                    <option value="other">Outro (Especifique na mensagem)</option>
-                </select>
+                <div className="introduction-explaining-sub">
+                    <i>Primeiro, preencha com um nome ou marca que possa identifica-lo. Será usado para uma direcionar um melhor atendimento!</i>
+                </div>
+                <div className="flex-hor">
+                    <label htmlFor="name-email">Nome/Marca:</label>
+                    <input type="text" name="name-email" id="name-email" placeholder="Nome" required />
+                </div>
+                <div className="introduction-explaining-sub">
+                    <i>Insira um e-mail para continuidade do atendimento. Ele será usado apenas para responder a mensagem, nada mais!</i>
+                </div>
+                <div className="flex-hor">
+                    <label htmlFor="name-email">Email:</label>
+                    <input type="email" name="form-email" id="form-email" placeholder="E-mail" required />
+                </div>
+                <div className="introduction-explaining-sub">
+                    <i>Insira seu DDD e telefone caso prefira um atendimento direto ou via WhatsApp. Este campo não é obrigatório.</i>
+                </div>
+                <div className="flex-hor">
+                    <label htmlFor="name-email">Telefone:</label>
+                    <div className="flex-hor" style={{ gap: "10px;"}}>
+                        <input type="text" name="phone-ddd-email" id="phone-ddd-email" maxLength={2} inputMode='numeric' placeholder="11" style={{ width: "2.5rem;"}} />
+                        <input type="text" name="phone-email" id="phone-email" maxLength={9} placeholder="999999999" />
+                    </div>
+                </div>
+                <div className="introduction-explaining-sub">
+                    <i>Qual o tipo de contato você deseja fazer? Esse campo é importante para agilizar o atendimento.</i>
+                </div>
+                <div className="flex-hor">
+                    <select name="type-service-email" id="type-service-email" required>
+                        <option value="" selected disabled>Escolha...</option>
+                        <option value="professional-site-creation">Criação de site</option>
+                        <option value="software-related-service">Software (Troca de S.O., limpeza)</option>
+                        <option value="partnership">Parceria</option>
+                    </select>
+                </div>
                 <label htmlFor="name-email">Mensagem:</label>
                 <textarea name="content-email" id="content-email" placeholder="Mensagem" required></textarea>
-                <input type="text" name="_gotcha" style={{ display: "none"}} /> 
                 <button type="submit" className="button-main-top" onClick={tempNotWorking}>Enviar</button>
             </form>
         </>
