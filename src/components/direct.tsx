@@ -40,7 +40,7 @@ export function Direct() {
                     <label htmlFor="name-email">Telefone:</label>
                     <div className="flex-hor" style={{ gap: "10px;"}}>
                         <input type="text" name="phone-ddd-email" id="phone-ddd-email" maxLength={2} inputMode='numeric' placeholder="11" style={{ width: "2.5rem;"}} />
-                        <input type="text" name="phone-email" id="phone-email" maxLength={9} placeholder="999999999" />
+                        <input type="text" name="phone-email" id="phone-email" inputMode='numeric' maxLength={9} placeholder="999999999" />
                     </div>
                 </div>
                 <div className="introduction-explaining-sub">
