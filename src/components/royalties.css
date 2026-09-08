@@ -1,0 +1,11 @@
+.flex-col{display: flex;flex-direction: column;}
+.section-divider{margin-top: 32px;}
+.section{
+    align-items: center;
+    justify-content: center;
+}
+.section-list{
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}

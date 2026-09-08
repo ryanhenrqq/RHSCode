@@ -5,6 +5,7 @@ import { createHashRouter, RouterProvider, Outlet, Link, useNavigate, useLocatio
 import { MainHome } from './components/main'
 import { MainPortfolio } from './components/portfolio'
 import { Direct } from './components/direct'
+import { RoyaltiesPage } from './components/royalties'
 import { NotFoundPage } from './components/404'
 
 import greenLogo from '/logo-image.png'
@@ -36,6 +37,10 @@ const route = createHashRouter([
       {
         path: "/direct",
         element: <Direct />
+      },
+      {
+        path: "/royalties",
+        element: <RoyaltiesPage />
       },
       {
         path:"*",
@@ -224,6 +229,7 @@ function FooterGlobal() {
         <div className="1">
           <a>Sobre</a>
           <a href="https://ko-fi.com/rhscode">Doação</a>
+          <Link to="/royalties">Créditos de Uso</Link>
           <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
         </div>
         <div className="1 align last-line-footer">
