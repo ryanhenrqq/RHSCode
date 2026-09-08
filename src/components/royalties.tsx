@@ -52,6 +52,9 @@ export function RoyaltiesPage() {
                 <li>
                     <i>TypeScript: Logotipo e marca registrada da Microsoft Corporation. Usado para fins informativos.</i>
                 </li>
+                <li>
+                    <i>Java: Logotipo, nome e marca registrada da Oracle Corporation e/ou de suas afiliadas. Usado para fins informativos.</i>
+                </li>
             </ul>
         </>
     )
