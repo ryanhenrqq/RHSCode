@@ -58,7 +58,10 @@ export function MainHome() {
                                 </div>
                             </div>
                         </div>
-                        <p>Você pode estar vendo as fontes no meu perfil do GitHub.</p>
+                        <p>
+                            Você pode estar vendo as fontes no meu perfil do&nbsp;
+                            <a href="https://github.com/ryanhenrqq/">GitHub.</a>
+                        </p>
                         <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
                             <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
                             <div className="button-main-top-txt">Contate-me</div>
