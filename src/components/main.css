@@ -221,7 +221,8 @@ img, svg {
 .secTb-title {
     display: flex;
     width: 100%;
-    margin-bottom: 48px;
+    margin-top: 6%;
+    margin-bottom: 6%;
     align-items: center;
     justify-content: center;
     font-size: 81px;
@@ -281,8 +282,8 @@ img, svg {
 }
 
 .secondTb div p {
-    padding-top: 1rem;
-    margin: 3rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 /*  Terceiro bloco  */
