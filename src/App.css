@@ -207,6 +207,42 @@ footer div a:hover {
     width: 90%;
 }
 
+.container-menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    border-radius: 24px;
+    background-color: #0000007d;
+    padding: 20px;
+    top: 11vh;
+    right: 20px;
+}
+.menuOptionsPopupBtn{
+    background-color: #000000a4;
+    border: solid 1px white;
+    border-radius: 30px;
+    padding: 12px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.menuOptionsPopupBtn:hover{
+    background-color: #b3b2b2a4;
+    color: black;
+    cursor: pointer;
+}
+.menuOptionsPopupBtn:active {
+    transform: scale(1.1);
+    background-color: #b3b2b2a4;
+    color: black;
+    cursor: pointer;
+}
+.tempHide{
+    display: none;
+}
+
 @keyframes opacityTransition {
     0% { opacity: 0; }
     100% { opacity: 1; }

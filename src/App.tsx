@@ -11,12 +11,14 @@ import greenLogo from '/logo-image.png'
 import photoLogo from '/my-photo.jpg'
 import srvPortfolio from '@ico/services-portfolio.png'
 import srvMessage from '@ico/comment.png'
+import menu from '@ico/menu.png'
 
 const loadingScreen = document.getElementById("loading-screen")
 
 if (loadingScreen) {
   loadingScreen.remove()
 }
+// Small comment for git
 
 const route = createHashRouter([
   {
@@ -71,11 +73,13 @@ type FullHeaderDesktopProps = {
   classNaming?: string
 }
 function FullHeaderDesktop({classNaming}: FullHeaderDesktopProps) {
+  // below these 2 elements, add <MenuOptionsPopup /> later!!
   return (
     <>
         <header className={classNaming}>
           <LeftSideHeader />
           <RightSideHeader />
+          
         </header>
     </>
   )
@@ -142,30 +146,58 @@ function PhotoLogoChanger() {
 }
 
 function RightSideHeader() {
-  const location = useLocation()
-  function handleTempUnvailable() {
-    alert("Não disponivel. Aguarde uma atualização futura.")
+  //const location = useLocation()
+  const [activeMenu, setActiveMenu] = useState(false)
+  const marker = activeMenu ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
+  function handleMenuBool() {
+    activeMenu ? setActiveMenu(false) : setActiveMenu(true)
   }
   return (
     <>
       <nav className="right-head flex-hor">
-              <div id="scrool-head" className="flex-hor right-head-buttons-parent">
-                <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
-                <RedirectHeadLink toTarget='direct' isActive={location.pathname === "/direct"} />
-                <select name="lang-sel" id="lang-sel" onChange={handleTempUnvailable}>
-                      <option value="port">PT</option>
-                      <option value="eng">EN</option>
-                </select>
+            <div id="scrool-head" className="flex-hor right-head-buttons-parent">
+              <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
+              <RedirectHeadLink toTarget='direct' isActive={location.pathname === "/direct"} />
+              <button className="tempHide" style={marker} onClick={handleMenuBool}>
+                <img src={menu} alt={menu} className="button-head-image" loading="lazy" />
+              </button>
             </div>
-        </nav>  
+        </nav>
+        
     </>
   )
 }
+
+
 
 type RedirecterLinkProps = {
   toTarget?: string,
   isActive?: boolean
 }
+/* >> new funcionality, replacing buttons with a hidden menu <<
+function MenuOptionsPopup() {
+    return(
+      <div className="container-menu-options tempHide">
+        <MenuOptionsPopupBtnWrap toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
+        <MenuOptionsPopupBtnWrap toTarget='direct' isActive={location.pathname === "/direct"} />
+      </div>
+    )
+}
+function MenuOptionsPopupBtnWrap({toTarget, isActive}: RedirecterLinkProps) {
+  if (toTarget=="") return
+  const showcaseForm = capitalize(`${toTarget}`)
+  const local = `/${toTarget}`
+  const marker = isActive ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
+  
+  return (
+      <Link to={isActive ? "/" : local} className="menuOptionsPopupBtn" style={marker}>
+        {
+          showcaseForm=="Direct" ? "Contato" : showcaseForm
+        }
+      </Link>
+  )
+}
+  */
 function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
   const local = `/${toTarget}`
   const marker = isActive ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
@@ -178,6 +210,12 @@ function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
     </>
   )
 }
+/* >> temporaly unused <<
+function capitalize(word: string): string {
+  if(!word) return ''
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+  */
 
 function FooterGlobal() {
   return (
