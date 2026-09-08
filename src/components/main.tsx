@@ -7,9 +7,10 @@ import react from '@logo/jsx.png'
 import typescript from '@logo/typescript.png'
 import java from '@logo/java.png'
 import srvMessage from '@ico/comment.png'
-import question from '@ico/question.png'
+//import question from '@ico/question.png'
 
 import backgroundVSCode from '@img/vs-code-photo.jpg'
+import macbookDesk from '@img/panoramic-laptop.png'
 
 export function MainHome() {
     const gaussianBlurDarker = {
@@ -91,8 +92,8 @@ export function MainHome() {
                     <h3 className="thirtyTb-title">Por que escolher o RHS Code?</h3>
                     <div className="flex-ver child-container-thirty-tb">
                         <div className="thirtyTb">
-                            <div className="image-side-main">
-                                <img src={question} alt="" className="main-splash-img" loading="lazy" />
+                            <div className="image-side-thirdy">
+                                <img src={macbookDesk} alt="" className="main-thirdy-img" loading="lazy" />
                             </div>
                             <div className="flex-ver index-txt">
                                 <p>Eu faço um trabalho de organização impecavel em seu proximo site! Todos os codigos ficam bem declarados e organizados em cada canto, fazendo assim uma manutenção posterior muito mais facil e amigavel pro seu bolso.</p>

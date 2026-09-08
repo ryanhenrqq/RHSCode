@@ -279,9 +279,6 @@ img, svg {
     align-items: center;
     overflow: hidden;
 }
-.child-container-thirty-tb {
-    z-index: 2;
-}
 .thirtyTb-title {
     display: flex;
     width: 100%;
@@ -294,13 +291,21 @@ img, svg {
 .thirtyTb {
     display: flex;
     flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .thirtyTb p {
     font-size: 20px;
     font-weight: 500;
 }
-.thirtyTb img {
-    filter: invert(0.5);
+.image-side-thirdy{
+    width: 50%;
+    height: 100%;
+}
+.main-thirdy-img{
+    object-fit: cover;
+    width: 100%;
+
 }
 
 @media (max-width: 1420px) {
@@ -310,7 +315,7 @@ img, svg {
     .index-txt h3 {
         font-size: 44px;
     }
-    .image-side-main {
+    .image-side-main, .image-side-thirdy {
         display: none;
     }
 }

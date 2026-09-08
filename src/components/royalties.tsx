@@ -32,10 +32,13 @@ export function RoyaltiesPage() {
                     <a href="https://www.flaticon.com/free-icons/question" title="question icons">Question icons created by NajmunNahar - Flaticon</a>
                 </li>
                 <li>
-                    <span>missing anchor - services-portfolio</span>
+                    missing anchor - services-portfolio
                 </li>
                 <li>
                     <a href="https://www.flaticon.com/free-icons/shine" title="shine icons">Shine icons created by Magnific - Flaticon</a>
+                </li>
+                <li>
+                    <b>PIXABAY - </b><p>Macbook View on a desk - </p><i>Image by <a href="https://pixabay.com/users/yeiferr-13554766/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4795762">yeiferr</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4795762">Pixabay</a></i>
                 </li>
             </ul>
             <h1 className="section flex-col section-divider">Linguagens e Frameworks</h1>
