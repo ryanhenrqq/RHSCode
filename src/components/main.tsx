@@ -1,7 +1,9 @@
 import "./main.css"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 
 import { RedirectHeadLink } from "../App"
+import handleLanguageChange from "../App"
+import type { MainHomeProps, Language } from "../types/types"
 
 import pyAndJs from '@logo/python-js.png'
 import python from '@logo/python.png'
@@ -15,7 +17,26 @@ import greenLogo from '/logo-image.png'
 import backgroundVSCode from '@img/vs-code-photo.jpg'
 import macbookDesk from '@img/panoramic-laptop.png'
 
-export function MainHome() {
+export interface ContextType {
+  lang: Language;
+  setLang: (lang: Language) => void;
+}
+
+export function HomePage() {
+  const { lang, setLang } = useOutletContext<ContextType>();
+
+  return lang === 'pt' ? (
+    <MainHome currentLang={lang} onLanguageChange={setLang} />
+  ) : (
+    <MainHomeEnglish currentLang={lang} onLanguageChange={setLang} />
+  );
+}
+
+export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        onLanguageChange(e.target.value as Language);
+    };
+    const { lang, setLang } = useOutletContext<ContextType>();
     const gaussianBlurDarker = {
         backgroundColor: "#0000007d",
         backdropFilter: "blur(5px)",
@@ -24,7 +45,7 @@ export function MainHome() {
     return (
         <>
             <main className="flex-ver" id="pt-version-index">
-                <select className="lang-sel-body">
+                <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
                     <option value="port">PT</option>
                     <option value="eng">EN</option>
                 </select>
@@ -111,6 +132,116 @@ export function MainHome() {
                             <div className="flex-ver index-txt">
                                 <p>Eu faço um trabalho de organização impecavel em seu proximo site! Todos os codigos ficam bem declarados e organizados em cada canto, fazendo assim uma manutenção posterior muito mais facil e amigavel pro seu bolso.</p>
                                 <p>Há de concordar que um codigo todo bagunçado, antigo e mal-otimizado é muito menos amigavel pra quem irá fazer algum conserto do codigo de seu site! Fora que algo mais limpo irá, com toda certeza, deixar o seu site o mais otimizado possivel e, compartivel com os motores de navegação mais recentes presentes nos navegadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </>
+    )
+}
+
+export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps) {
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        onLanguageChange(e.target.value as Language);
+    };
+    const { lang, setLang } = useOutletContext<ContextType>();
+    const gaussianBlurDarker = {
+        backgroundColor: "#0000007d",
+        backdropFilter: "blur(5px)",
+        border: "solid 1px rgba(255, 255, 255, 0.492)"
+    }
+    return (
+        <>
+            <main className="flex-ver" id="pt-version-index">
+                <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
+                    <option value="port">PT</option>
+                    <option value="eng">EN</option>
+                </select>
+                <div className="flex-hor">
+                    <div className="flex-ver index-txt">
+                        
+                        <div className="flex-hor header-main-splash" style={{display: "none"}}>
+                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
+                            <h3>Meet RHS Code</h3>
+                            <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
+                        </div>
+
+                        <div className="flex-hor">
+                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
+                            <h3>Meet <b style={{ color: "#338119"}}>RHS Code</b></h3>
+                        </div>
+                        <p>I'm a Front-End Developer focused on creating the best, most user-friendly interfaces for your business. I build solutions that elevate your professional website by keeping things simple, intuitive, and powerful.</p>
+                        <p>Practical experience and personal projects written in:</p>
+                        <div className="experience-tab-flex">
+                            <div className="experience-tab">
+                                <img src={python} alt="Python Logo" draggable="false" loading="lazy" />
+                                <div className="right-experience-tab">
+                                    <div>Python</div>
+                                </div>
+                            </div>
+                            <div className="experience-tab">
+                                <img src={react} alt="React Logo" draggable="false" loading="lazy" />
+                                <div className="right-experience-tab">
+                                    <div>React</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Actively creating a new experience in:</p>
+                        <div className="experience-tab-flex">
+                            <div className="experience-tab">
+                                <img src={java} alt="Java Logo" draggable="false" loading="lazy" />
+                                <div className="right-experience-tab">
+                                    <div>Java</div>
+                                </div>
+                            </div>
+                            <div className="experience-tab">
+                                <img src={typescript} alt="TS Logo" draggable="false" loading="lazy" />
+                                <div className="right-experience-tab">
+                                    <div>TypeScript</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            You may be viewing the sources on my&nbsp;
+                            <a href="https://github.com/ryanhenrqq/">GitHub</a>
+                            &nbsp;profile.
+                        </p>
+                        <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
+                            <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
+                            <div className="button-main-top-txt">Contact me</div>
+                        </Link>
+                    </div>
+                    <div className="image-side-main">
+                        <img src={pyAndJs} alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />
+                    </div>
+                </div>
+                <div className="flex-ver main-container-second-tb">
+                    <img src={backgroundVSCode} alt="VS Code Photo" className="secondTb-img-back" loading="lazy" />
+                    <div className="flex-ver child-container-second-tb">
+                        <h3 className="secTb-title">Areas of Practice</h3>
+                        <div className="secondTb">
+                            <div className="flex-ver">
+                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" className="secTb-badges-logo" loading="lazy" />
+                                <p>Python was the language that taught me programming logic and sparked my passion for building software and pursuing a career in tech. While it’s not my primary focus today—since it lacks native support for mobile or web devices—it’s still fantastic for desktop apps and automation.</p>
+                            </div>
+                            <div className="flex-ver">
+                                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="secTb-badges-logo" loading="lazy" />
+                                <p>JavaScript drew me in because of its incredible responsiveness and the endless possibilities it offers for the web. I was actually ambitious enough to try learning Java first, until I stumbled upon JS 😅. My main focus right now is on React and TypeScript.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex-ver main-container-thirty-tb">
+                    <h3 className="thirtyTb-title">Why choose RHS Code?</h3>
+                    <div className="flex-ver child-container-thirty-tb">
+                        <div className="thirtyTb">
+                            <div className="image-side-thirdy">
+                                <img src={macbookDesk} alt="" className="main-thirdy-img" loading="lazy" />
+                            </div>
+                            <div className="flex-ver index-txt">
+                                <p>I bring clean, flawless organization to your next website. Every line of code is well-structured and clearly documented, making future maintenance effortless and much more cost-effective for you.</p>
+                                <p>Let's face it: messy, outdated, and unoptimized code is a nightmare for anyone trying to maintain your site. On the other hand, clean code ensures your site stays highly optimized and fully compatible with the latest browser engines.</p>
                             </div>
                         </div>
                     </div>

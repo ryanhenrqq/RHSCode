@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { createHashRouter, RouterProvider, Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 
-import { MainHome } from './components/main'
+import { HomePage } from './components/main'
 import { MainPortfolio } from './components/portfolio'
 import { Direct } from './components/direct'
 import { RoyaltiesPage } from './components/royalties'
 import { NotFoundPage } from './components/404'
+import type { Language } from './types/types'
 
 import greenLogo from '/logo-image.png'
 import photoLogo from '/my-photo.jpg'
@@ -28,7 +29,7 @@ const route = createHashRouter([
     children: [
       {
         index: true,
-        element: <MainHome />
+        element: <HomePage />
       },
       {
         path: "/portfolio",
@@ -58,13 +59,14 @@ function App() {
 }
 
 function DesktopHeader() {
+  const [lang, setLang] = useState<Language>('pt')
   return (
     <>
       <main>
         <FullHeaderDesktop classNaming="desktopView full-head-desktop" />
         <FullHeaderMobile classNaming="mobileView full-head-mobile" />
         <div className="main">
-          <Outlet />
+          <Outlet context={{ lang, setLang }} />
         </div>
         <footer>
           <FooterGlobal />
