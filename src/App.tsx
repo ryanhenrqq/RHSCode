@@ -101,11 +101,11 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
   const title = path.charAt(0).toUpperCase() + path.slice(1)
   const navi = useNavigate()
 
-  const [topListen, setTopListen] = useState<boolean>(true)
-  useEffect(() => {
-    const handleHeaderHide = () => {
-      setTopListen(window.scrollY < 100);
-    }
+  const [topListen, setTopListen] = useState<boolean>(true) // Serve apenas pra dizer se ta no topo ou não //
+  useEffect(() => {                                           // 
+    const handleHeaderHide = () => {                            // 
+      setTopListen(window.scrollY < 100);                        // 
+    }                                                           // 
     window.addEventListener('scroll', handleHeaderHide, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleHeaderHide);
@@ -119,7 +119,14 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
             </div>
         </div>
         <div onClick={() => navi('/')}>
-            {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Home"}</h1>}
+            {!topListen ? 
+              <h1 className="title-head title-head-index">     {/* Se NAO estiver no topo, ele mostra rhs code se estiver nohome, ou title se nao */}
+                {location.pathname==="/" ? "RHS Code" : title}
+              </h1> : 
+              <h1 className="title-head title-head-index"> {/* Se estiver e nao tiver na home, ele mostra rhs code */}
+                {location.pathname==="/" ? "" : "Home"}
+              </h1>
+            }
         </div>
         <nav className="right-head flex-hor">
             <div id="scrool-head" className="flex-hor right-head-buttons-parent">
@@ -133,6 +140,7 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
 function LeftSideHeader() {
   const navi = useNavigate()
   const [topListen, setTopListen] = useState<boolean>(true)
+  /*                                            >>> Problematico, tirado por hora pra testar o titulo do header dinamico
   useEffect(() => {
     const handleHeaderHide = () => {
       setTopListen(window.scrollY < 100);
@@ -142,10 +150,12 @@ function LeftSideHeader() {
       window.removeEventListener('scroll', handleHeaderHide);
     }
   }, [])
+  */
   return (
     <>
       <div className="left-head flex-hor" onClick={() => navi('/')}>
-          {!topListen ? <PhotoLogoChanger /> : null}
+          {/*!topListen ? <PhotoLogoChanger /> : null*/}
+          <PhotoLogoChanger />
       </div>
     </>
   )
@@ -165,10 +175,24 @@ function PhotoLogoChanger() {
       }, 5000)
     return clearInterval(changer)
   }, [])
+
+  const [topListen, setTopListen] = useState<boolean>(true)
+  useEffect(() => {
+    const handleHeaderHide = () => {
+      console.log(window.scrollY, window.scrollX)
+      setTopListen(window.scrollY < 100);
+    }
+    window.addEventListener('scroll', handleHeaderHide, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleHeaderHide);
+    }
+  }, [])
   return (
     <>
-      <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" />
-      <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1>
+      {!topListen ? <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" /> : null}
+      <h1 className="title-head title-head-index">
+        {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Voltar"}</h1>}
+      </h1>
     </>
   )
 }
