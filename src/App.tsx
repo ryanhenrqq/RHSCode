@@ -139,7 +139,7 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
 
 function LeftSideHeader() {
   const navi = useNavigate()
-  const [topListen, setTopListen] = useState<boolean>(true)
+  //const [topListen, setTopListen] = useState<boolean>(true)
   /*                                            >>> Problematico, tirado por hora pra testar o titulo do header dinamico
   useEffect(() => {
     const handleHeaderHide = () => {
@@ -215,7 +215,6 @@ function RightSideHeader() {
               </button>
             </div>
         </nav>
-        
     </>
   )
 }
@@ -274,10 +273,14 @@ function FooterGlobal() {
     <>
       <footer id="pt-version-footer-index gaussian-blur">
         <div className="1">
-          <a>Sobre</a>
-          <a href="https://ko-fi.com/rhscode">Doação</a>
-          <Link to="/royalties">Créditos de Uso</Link>
-          <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
+          <div className="flex-hor-footer">
+            <a>Sobre</a>
+            <a href="https://ko-fi.com/rhscode">Doação</a>
+          </div>
+          <div className="flex-hor-footer">
+            <Link to="/royalties">Créditos de Uso</Link>
+            <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
+          </div>
         </div>
         <div className="1 align last-line-footer">
           <small><a href="#">© 2024 RHS Code </a> - é uma marca digital criada por Ryan Henrique</small>
