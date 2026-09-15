@@ -12,6 +12,8 @@ type RedirectConfigs = {
 
 const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     github: {type: 'external', url: 'https://github.com/ryanhenrqq/'},
+    instagram: {type: 'external', url: 'https://www.instagram.com/rhs.code/'},
+    linkedin: {type: 'external', url: 'https://www.linkedin.com/in/ryan-silva-791677300/?locale=pt-BR'},
 
     // Direct to website - links
     floodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
@@ -61,7 +63,7 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name='Instagram' description='Eu faço conteúdo abordando Programação e CyberSegurança. Você vai gostar!' />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button onClick={() => handleRedirect('github')}>Abrir</button>
+                            <button onClick={() => handleRedirect('instagram')}>Abrir</button>
                         </div>
                     </div>
                     <div className="flex-ver portfolio-item-container">
@@ -70,7 +72,7 @@ export function MainPortfolio() {
                             <HeaderNameGenerator name='Linkedin' description='Uma visão geral para empresas. Tem muita coisa interessante aqui.' />
                         </div>
                         <div className="flex-ver main-item-container">
-                            <button onClick={() => handleRedirect('github')}>Abrir</button>
+                            <button onClick={() => handleRedirect('linkedin')}>Abrir</button>
                         </div>
                     </div>
                 </div>
