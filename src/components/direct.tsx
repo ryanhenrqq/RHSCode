@@ -26,6 +26,7 @@ export function Direct() {
 
 function FormBody({onSucess}: ChildProps) {
     const [loading, setLoading] = useState<boolean>(false)
+    const [errMessage, setErrMessage] = useState<string | null>(null)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
@@ -43,6 +44,11 @@ function FormBody({onSucess}: ChildProps) {
             console.log("Enviado com sucesso!")
             onSucess()
         } catch (error) {
+            if (error instanceof Error) {
+                setErrMessage(String(error))
+            } else {
+                setErrMessage("Ocorreu um erro inesperado!")
+            }
             console.error(error)
         } finally {
             setLoading(false)
@@ -91,6 +97,11 @@ function FormBody({onSucess}: ChildProps) {
             </div>
             <label htmlFor="name-email">Mensagem:</label>
             <textarea name="content-email" id="content-email" placeholder="Mensagem" required></textarea>
+            {errMessage && (
+                <div style={{ color: 'red', marginBottom: '1rem' }}>
+                ⚠️ {errMessage}
+                </div>
+            )}
             <button type="submit" className="button-main-top">
                     {loading ? 'Enviando' : 'Enviar'}
             </button>
