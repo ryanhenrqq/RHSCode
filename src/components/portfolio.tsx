@@ -86,7 +86,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('floodthecookie')}>Abrir</button>
                             <button onClick={() => handleRedirect('floodthecookiesc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -101,7 +100,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
                             <button onClick={() => handleRedirect('ooniquepasssc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -120,7 +118,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
                             <button onClick={() => handleRedirect('kalccalculadorasc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -135,7 +132,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('todotasks')}>Abrir</button>
                             <button onClick={() => handleRedirect('todotaskssc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -150,7 +146,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
                             <button onClick={() => handleRedirect('todotaskstssc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -165,7 +160,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('climaopenweather')}>Abrir</button>
                             <button onClick={() => handleRedirect('climaopenweathersc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
@@ -184,7 +178,6 @@ export function MainPortfolio() {
                         <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
                             <button onClick={() => handleRedirect('kalccalculadoralitesc')}>GitHub</button>
-                            <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
