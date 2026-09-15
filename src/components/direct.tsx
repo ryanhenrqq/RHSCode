@@ -1,5 +1,14 @@
+import React, { useState } from 'react'
 import './direct.css'
 
+interface UserFormData{
+    name: string;
+    email: string;
+    dddphone: string;
+    phone: string;
+    type: string;
+    content: string
+}
 export function Direct() {
     function tempNotWorking() {
         if (confirm("O seguinte formulário não está ativo nesse repositorio. Para usa-lo, você deve ir a pagina legada e preencher as suas informações para contato direto.\n\nDeseja ser redirecionado agora?")) {
@@ -8,13 +17,39 @@ export function Direct() {
             console.log("Redirecionamento cancelado.")
         }
     }
+
+    const [loading, setLoading] = useState<boolean>(false)
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setLoading(true)
+
+        const formData = new FormData(e.currentTarget)
+        const data = Object.fromEntries(formData.entries()) as unknown as UserFormData
+
+        try {
+            const res = await fetch('https://formspree.io/f/mbddjrwd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            if (!res.ok) throw new Error('Erro ao enviar')
+            console.log("Enviado com sucesso!")
+        } catch (error) {
+            console.error(error)
+        } finally {
+            setLoading(false)
+        }
+    }
+
     return (
         <>
-            <span className='flex-ver'>
+            {/* MANTIDO PRA EVITAR BUGS FUTUROS */}
+            <span className='flex-ver' style={{ display:'none'}}>
                 <b>Para evitar perca de tempo, esse formulário está desativado temporariamente</b>
                 <button onClick={tempNotWorking}>Modo Compartibilidade</button>
             </span>
-            <form className="contact-email-form" id="contact-email-form" autoComplete="off">
+            <form className="contact-email-form" id="contact-email-form" autoComplete="off" onSubmit={handleSubmit}>
                 <div className='introduction-explaining flex-ver'>
                     <h3>Contato direto a meus serviços</h3>
                     <i>Para entrar em contato, preencha com calma todos os campos abaixo, para que eu possa identifica-lo e de dar um retorno o mais breve possivel!</i>
@@ -56,7 +91,9 @@ export function Direct() {
                 </div>
                 <label htmlFor="name-email">Mensagem:</label>
                 <textarea name="content-email" id="content-email" placeholder="Mensagem" required></textarea>
-                <button type="submit" className="button-main-top" onClick={tempNotWorking}>Enviar</button>
+                <button type="submit" className="button-main-top">
+                    {loading ? 'Enviando' : 'Enviar'}
+                </button>
             </form>
         </>
     )
