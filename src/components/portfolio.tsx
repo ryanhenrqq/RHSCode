@@ -83,9 +83,9 @@ export function MainPortfolio() {
                             <img src="https://ryanhenrqq.github.io/FloodTheCookie/src/res/fav/favicon.png" alt="" loading="lazy" />
                             <HeaderNameGenerator name='FloodTheCookie' description="Jogo Point-n-Click interativo e relaxante!" />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('floodthecookie')}>Abrir</button>
-                            <button onClick={() => handleRedirect('floodthecookiesc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('floodthecookiesc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -98,9 +98,9 @@ export function MainPortfolio() {
                             <img src="https://raw.githubusercontent.com/ryanhenrqq/OoniquePass/main/res/favicon.png" />
                             <HeaderNameGenerator name="OoniquePass" description="Gerador de senhas simples e objetivo." />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
-                            <button onClick={() => handleRedirect('ooniquepasssc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('ooniquepasssc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -117,9 +117,9 @@ export function MainPortfolio() {
                             <img src="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" alt="" style={{filter: "invert(1)" }}loading="lazy" />
                             <HeaderNameGenerator name="KalcCalculadora" description="Aplicativo web de calculadora e formulas." />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
-                            <button onClick={() => handleRedirect('kalccalculadorasc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('kalccalculadorasc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -132,9 +132,9 @@ export function MainPortfolio() {
                             <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
                             <HeaderNameGenerator name="ToDoTasks Legacy" description="Crie tarefas e lembretes pelo navegador!" />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('todotasks')}>Abrir</button>
-                            <button onClick={() => handleRedirect('todotaskssc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('todotaskssc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -147,9 +147,9 @@ export function MainPortfolio() {
                             <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
                             <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador! Recriado em TypeScript" />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
-                            <button onClick={() => handleRedirect('todotaskstssc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('todotaskstssc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -162,9 +162,9 @@ export function MainPortfolio() {
                             <img src="https://ryanhenrqq.github.io/ClimaComOpenWeather/components/res/icon/sun.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
                             <HeaderNameGenerator name="Clima com OpenWeather" description="Demo de um App de Clima pronto para a API OpenWeather" />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button onClick={() => handleRedirect('climaopenweather')}>Abrir</button>
-                            <button onClick={() => handleRedirect('climaopenweathersc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('climaopenweathersc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -181,9 +181,9 @@ export function MainPortfolio() {
                             <img src="https://img.icons8.com/ios-filled/100/no-image.png" alt="" style={{filter: "invert(1)"}} loading="lazy" />
                             <HeaderNameGenerator name="KalcCalculadora Lite" description="Aplicativo android de calculadora e formulas." />
                         </div>
-                        <div className="flex-ver main-item-container">
+                        <div className="flex-hor main-item-container">
                             <button disabled>Abrir</button>
-                            <button onClick={() => handleRedirect('kalccalculadoralitesc')}>Visitar Codigo-Fonte</button>
+                            <button onClick={() => handleRedirect('kalccalculadoralitesc')}>GitHub</button>
                             <button>Reportar Bug</button>
                         </div>
                         <div className="flex-hor footer-item-container">
@@ -204,7 +204,7 @@ interface PropsDefinerHeader {
 
 function HeaderNameGenerator({name, description}: PropsDefinerHeader) {
     return (
-        <div className="flex-ver">
+        <div className="flex-ver card-name-portfolio">
             <b>{name}</b>
             <p>{description}</p>
         </div>

@@ -3,6 +3,10 @@
     margin-left: 24px;
     margin-right: 24px;
 }
+.card-name-portfolio b{
+    width: 100%;
+    text-align: left;
+}
 
 .portfolio-grid {
     display: grid;
@@ -15,8 +19,8 @@
 .portfolio-item-container {
     width: 80%;
     border: solid 1px white;
+    padding: 4%;
     border-radius: 24px;
-    padding: 16px;
     gap: 16px;
     margin-top: 5%;
     margin-bottom: 3%;
@@ -26,35 +30,45 @@
     flex-direction: row;
 }
 .header-item-container img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     padding-right: 8px;
 }
 .main-item-container {
+    width: 100%;
     gap: 8px;
 }
 .main-item-container button{
     width: 100%;
-    padding: 8px;
-    border: none;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: solid 1px white;
     border-radius: 20px;
-    background-color: #393939;
+    background-color: #1515158e;
     color: white;
     font-size: 12px;
     font-weight: 600;
+    transition: background-color 0.2s linear;
 }
 .main-item-container button:hover{
-    background-color: #272727;
+    background-color: #5e5e5eb4;
     cursor: pointer;
 }
-.footer-item-container b{
-    width: 10rem;
-}
 .portfolio-written-lang {
-    width: 90%;
-    height: 30px;
+    width: 100%;
+    height: 40px;
+    border-radius: 32px;
     object-fit: cover;
+}
+.footer-item-container {
+    width: 100%;
+}
+.footer-item-container b {
+    width: 70%;
+    text-align: right;
 }
 
 button:disabled {
@@ -65,22 +79,13 @@ button:disabled {
 button:disabled:hover {
     cursor: not-allowed;
 }
-
-.page-end-suggestion {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    border-top: solid 1px white;
-    color: white;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
+}
+@media (max-width: 768px) {
+    
     .portfolio-grid-two{
         grid-template-columns: 1fr;
     }
