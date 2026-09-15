@@ -60,6 +60,10 @@ function App() {
 
 function DesktopHeader() {
   const [lang, setLang] = useState<Language>('pt')
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <main>
