@@ -1,6 +1,8 @@
 import "./portfolio.css"
 
 import github from '@ico/github.png'
+import instagramIcon from '@ico/instagram.png'
+import linkedinIcon from '@ico/linkedin.png'
 
 type RedirectConfigs = {
     // type safety scheme
@@ -21,6 +23,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     ooniquepasssc: {type: 'external', url: 'https://github.com/ryanhenrqq/OoniquePass'},
     kalccalculadorasc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadora'},
     todotaskssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks'},
+    todotaskstssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks-Ts'},
     climaopenweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/ClimaComOpenWeather'},
     kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'}
 }
@@ -52,9 +55,27 @@ export function MainPortfolio() {
                             <button onClick={() => handleRedirect('github')}>Abrir</button>
                         </div>
                     </div>
+                    <div className="flex-ver portfolio-item-container">
+                        <div className="header-item-container">
+                            <img src={instagramIcon} alt="Instagram" loading="lazy" />
+                            <HeaderNameGenerator name='Instagram' description='Eu faço conteúdo abordando Programação e CyberSegurança. Você vai gostar!' />
+                        </div>
+                        <div className="flex-ver main-item-container">
+                            <button onClick={() => handleRedirect('github')}>Abrir</button>
+                        </div>
+                    </div>
+                    <div className="flex-ver portfolio-item-container">
+                        <div className="header-item-container">
+                            <img src={linkedinIcon} alt="Linkedin" loading="lazy" />
+                            <HeaderNameGenerator name='Linkedin' description='Uma visão geral para empresas. Tem muita coisa interessante aqui.' />
+                        </div>
+                        <div className="flex-ver main-item-container">
+                            <button onClick={() => handleRedirect('github')}>Abrir</button>
+                        </div>
+                    </div>
                 </div>
                 <h3>Projetos solidos</h3>
-                <div className="portfolio-grid">
+                <div className="portfolio-grid-two">
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/FloodTheCookie/src/res/fav/favicon.png" alt="" loading="lazy" />
@@ -107,7 +128,7 @@ export function MainPortfolio() {
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
-                            <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador!" />
+                            <HeaderNameGenerator name="ToDoTasks Legacy" description="Crie tarefas e lembretes pelo navegador!" />
                         </div>
                         <div className="flex-ver main-item-container">
                             <button onClick={() => handleRedirect('todotasks')}>Abrir</button>
@@ -117,6 +138,21 @@ export function MainPortfolio() {
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
                             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="portfolio-written-lang" />
+                        </div>
+                    </div>
+                    <div className="flex-ver portfolio-item-container">
+                        <div className="header-item-container">
+                            <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
+                            <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador! Recriado em TypeScript" />
+                        </div>
+                        <div className="flex-ver main-item-container">
+                            <button disabled>Abrir</button>
+                            <button onClick={() => handleRedirect('todotaskstssc')}>Visitar Codigo-Fonte</button>
+                            <button>Reportar Bug</button>
+                        </div>
+                        <div className="flex-hor footer-item-container">
+                            <b>Escrito em </b>
+                            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" alt="JavaScript" className="portfolio-written-lang" />
                         </div>
                     </div>
                     <div className="flex-ver portfolio-item-container">
