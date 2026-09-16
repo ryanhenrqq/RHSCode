@@ -18,7 +18,9 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     // Direct to website - links
     floodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
     todotasks: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks/'},
+    todotasksts: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks-Ts/'},
     climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ClimaComOpenWeather/'},
+    rweather: {type: 'external', url: 'https://rweather-alpha.vercel.app/'},
 
     // Source codes (sc) - to github
     floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
@@ -27,7 +29,8 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     todotaskssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks'},
     todotaskstssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks-Ts'},
     climaopenweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/ClimaComOpenWeather'},
-    kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'}
+    kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'},
+    rweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/RWeather'}
 }
 
 const handleRedirect = (key: string) => {
@@ -77,7 +80,7 @@ export function MainPortfolio() {
                     </div>
                 </div>
                 <h3>Projetos solidos</h3>
-                <div className="portfolio-grid-two">
+                <div className="portfolio-grid">
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/FloodTheCookie/src/res/fav/favicon.png" alt="" loading="lazy" />
@@ -90,6 +93,20 @@ export function MainPortfolio() {
                         <div className="flex-hor footer-item-container">
                             <b>Escrito em </b>
                             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="portfolio-written-lang"/>
+                        </div>
+                    </div>
+                    <div className="flex-ver portfolio-item-container">
+                        <div className="header-item-container">
+                            <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
+                            <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador! Recriado em TypeScript" />
+                        </div>
+                        <div className="flex-hor main-item-container">
+                            <button onClick={() => handleRedirect('todotasksts')}>Abrir</button>
+                            <button onClick={() => handleRedirect('todotaskstssc')}>GitHub</button>
+                        </div>
+                        <div className="flex-hor footer-item-container">
+                            <b>Escrito em </b>
+                            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" alt="TypeScriptScript" className="portfolio-written-lang" />
                         </div>
                     </div>
                     <div className="flex-ver portfolio-item-container">
@@ -110,6 +127,20 @@ export function MainPortfolio() {
                 
                 <h3>Projetos em desenvolvimento</h3>
                 <div className="portfolio-grid">
+                    <div className="flex-ver portfolio-item-container">
+                        <div className="header-item-container">
+                            <img src="https://raw.githubusercontent.com/ryanhenrqq/RWeather/main/public/favicon.png" alt="" style={{filter: "invert(1)" }}loading="lazy" />
+                            <HeaderNameGenerator name="RWeather (Destaque)" description="Webapp para consultar condições climaticas, pesquisando pelo nome de sua cidade. Usa API." />
+                        </div>
+                        <div className="flex-hor main-item-container">
+                            <button onClick={() => handleRedirect('rweather')}>Abrir</button>
+                            <button onClick={() => handleRedirect('rweathersc')}>GitHub</button>
+                        </div>
+                        <div className="flex-hor footer-item-container">
+                            <b>Escrito em </b>
+                            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" alt="TypeScriptScript" className="portfolio-written-lang" />
+                        </div>
+                    </div>
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" alt="" style={{filter: "invert(1)" }}loading="lazy" />
@@ -138,20 +169,7 @@ export function MainPortfolio() {
                             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="portfolio-written-lang" />
                         </div>
                     </div>
-                    <div className="flex-ver portfolio-item-container">
-                        <div className="header-item-container">
-                            <img src="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
-                            <HeaderNameGenerator name="ToDoTasks" description="Crie tarefas e lembretes pelo navegador! Recriado em TypeScript" />
-                        </div>
-                        <div className="flex-hor main-item-container">
-                            <button disabled>Abrir</button>
-                            <button onClick={() => handleRedirect('todotaskstssc')}>GitHub</button>
-                        </div>
-                        <div className="flex-hor footer-item-container">
-                            <b>Escrito em </b>
-                            <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" alt="JavaScript" className="portfolio-written-lang" />
-                        </div>
-                    </div>
+                    
                     <div className="flex-ver portfolio-item-container">
                         <div className="header-item-container">
                             <img src="https://ryanhenrqq.github.io/ClimaComOpenWeather/components/res/icon/sun.svg" alt="" style={{filter: "invert(1)"}} loading="lazy" />
