@@ -11,6 +11,7 @@ import react from '@logo/jsx.png'
 import typescript from '@logo/typescript.png'
 import java from '@logo/java.png'
 import srvMessage from '@ico/comment.png'
+import srvPortfolio from '@ico/services-portfolio.png'
 //import question from '@ico/question.png'
 
 import greenLogo from '/logo-image.png'
@@ -100,6 +101,10 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
                         <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
                             <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
                             <div className="button-main-top-txt">Contate-me</div>
+                        </Link>
+                        <Link to="/portfolio" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
+                            <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
+                            <div className="button-main-top-txt">Portfólio</div>
                         </Link>
                     </div>
                     <div className="image-side-main">
