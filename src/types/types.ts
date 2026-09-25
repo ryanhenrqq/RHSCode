@@ -22,3 +22,13 @@ export interface PropsDefinerHeader {
     name: string,
     description: string
 }
+export type RedirecterLinkProps = {
+  toTarget?: string,
+  isActive?: boolean
+}
+export type FullHeaderDesktopProps = {
+  classNaming?: string
+}
+export type FullHeaderMobileProps = {
+  classNaming?: string
+}

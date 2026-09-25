@@ -1,14 +1,14 @@
 import "./main.css"
 import { Link, useOutletContext } from "react-router-dom"
 
-import { RedirectHeadLink } from "../../App"
+//import { RedirectHeadLink } from "../../App"
 import type { MainHomeProps, Language } from "../../types/types"
 
 import pyAndJs from '@logo/python-js.png'
 import python from '@logo/python.png'
-import react from '@logo/jsx.png'
+//import react from '@logo/jsx.png'
 import typescript from '@logo/typescript.png'
-import java from '@logo/java.png'
+//import java from '@logo/java.png'
 import srvMessage from '@ico/comment.png'
 import srvPortfolio from '@ico/services-portfolio.png'
 //import question from '@ico/question.png'
@@ -22,7 +22,7 @@ export interface ContextType {
   setLang: (lang: Language) => void;
 }
 
-export function HomePage() {
+export default function HomePage() {
   const { lang, setLang } = useOutletContext<ContextType>();
 
   return lang === 'pt' ? (

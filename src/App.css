@@ -11,16 +11,6 @@ img, svg {
     user-select: none;
     pointer-events: none;
 }
-.gaussian-blur {
-    background-color: #0000007d;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-.gaussian-blur-darker {
-    background-color: #000000a4;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
 .main {
     padding-top: 12vh;
     padding-bottom: 28px;
@@ -197,10 +187,10 @@ footer button:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
-footer div a{
+footer div b{
     font-weight: bolder;
 }
-footer div a:hover {
+footer div b:hover {
     color: #24d600;
     cursor: pointer;
 }

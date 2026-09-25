@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import './App.css'
 import { createHashRouter, RouterProvider, Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 
-import { HomePage } from './components/home/main'
-import { MainPortfolio } from './components/projects/portfolio'
-import { Direct } from './components/contact/direct'
-import { RoyaltiesPage } from './components/royalties'
-import { NotFoundPage } from './components/404'
-import type { Language } from './types/types'
+const HomePage = lazy(() => import('./components/home/main'))
+const MainPortfolio = lazy(() => import('./components/projects/portfolio'))
+const Direct = lazy(() => import('./components/contact/direct'))
+const RoyaltiesPage = lazy(() => import('./components/royalties'))
+const NotFoundPage = lazy(() => import('./components/404'))
+import type { Language, RedirecterLinkProps, FullHeaderDesktopProps, FullHeaderMobileProps } from './types/types'
+import { useIsMobile } from './types/mobile'
 
 import greenLogo from '/logo-image.png'
-import photoLogo from '/my-photo.jpg'
 import srvPortfolio from '@ico/services-portfolio.png'
 import srvMessage from '@ico/comment.png'
 import menu from '@ico/menu.png'
@@ -29,23 +29,43 @@ const route = createHashRouter([
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: (
+          <Suspense fallback={<LoadingDown />} >
+            <HomePage />
+          </Suspense>
+        )
       },
       {
         path: "/portfolio",
-        element: <MainPortfolio />
+        element: (
+          <Suspense fallback={<LoadingDown />} >
+            <MainPortfolio />
+          </Suspense>
+        )
       },
       {
         path: "/direct",
-        element: <Direct />
+        element: (
+          <Suspense fallback={<LoadingDown />} >
+            <Direct />
+          </Suspense>
+        )
       },
       {
         path: "/royalties",
-        element: <RoyaltiesPage />
+        element: (
+          <Suspense fallback={<LoadingDown />} >
+            <RoyaltiesPage />
+          </Suspense>
+        )
       },
       {
         path:"*",
-        element: <NotFoundPage />
+        element: (
+          <Suspense fallback={<LoadingDown />} >
+            <NotFoundPage />
+          </Suspense>
+          )
       }
     ]
   }
@@ -61,28 +81,23 @@ function App() {
 function DesktopHeader() {
   const [lang, setLang] = useState<Language>('pt')
   const { pathname } = useLocation();
+  const mobView = useIsMobile(768)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
     <>
       <main>
-        <FullHeaderDesktop classNaming="desktopView full-head-desktop" />
-        <FullHeaderMobile classNaming="mobileView full-head-mobile" />
+        {!mobView?<FullHeaderDesktop classNaming="desktopView full-head-desktop" />:<FullHeaderMobile classNaming="mobileView full-head-mobile" />}
         <div className="main">
           <Outlet context={{ lang, setLang }} />
         </div>
-        <footer>
-          <FooterGlobal />
-        </footer>
+        <FooterGlobal />
       </main>
     </>
   )
 }
 
-type FullHeaderDesktopProps = {
-  classNaming?: string
-}
 function FullHeaderDesktop({classNaming}: FullHeaderDesktopProps) {
   // below these 2 elements, add <MenuOptionsPopup /> later!!
   return (
@@ -90,26 +105,22 @@ function FullHeaderDesktop({classNaming}: FullHeaderDesktopProps) {
         <header className={classNaming}>
           <LeftSideHeader />
           <RightSideHeader />
-          
         </header>
     </>
   )
 }
 
-type FullHeaderMobileProps = {
-  classNaming?: string
-}
 function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
   const location = useLocation()
   const path = location.pathname.slice(1)
   const title = path.charAt(0).toUpperCase() + path.slice(1)
   const navi = useNavigate()
 
-  const [topListen, setTopListen] = useState<boolean>(true) // Serve apenas pra dizer se ta no topo ou não //
-  useEffect(() => {                                           // 
-    const handleHeaderHide = () => {                            // 
-      setTopListen(window.scrollY < 100);                        // 
-    }                                                           // 
+  const [topListen, setTopListen] = useState<boolean>(true)
+  useEffect(() => {
+    const handleHeaderHide = () => {
+      setTopListen(window.scrollY < 100);
+    } 
     window.addEventListener('scroll', handleHeaderHide, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleHeaderHide);
@@ -143,22 +154,9 @@ function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
 
 function LeftSideHeader() {
   const navi = useNavigate()
-  //const [topListen, setTopListen] = useState<boolean>(true)
-  /*                                            >>> Problematico, tirado por hora pra testar o titulo do header dinamico
-  useEffect(() => {
-    const handleHeaderHide = () => {
-      setTopListen(window.scrollY < 100);
-    }
-    window.addEventListener('scroll', handleHeaderHide, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleHeaderHide);
-    }
-  }, [])
-  */
   return (
     <>
       <div className="left-head flex-hor" onClick={() => navi('/')}>
-          {/*!topListen ? <PhotoLogoChanger /> : null*/}
           <PhotoLogoChanger />
       </div>
     </>
@@ -169,21 +167,10 @@ function PhotoLogoChanger() {
   const location = useLocation()
   const path = location.pathname.slice(1)
   const title = path.charAt(0).toUpperCase() + path.slice(1)
-  const [photoUrl, setPhotoUrl] = useState(`${greenLogo}`)
-  useEffect(() => {
-    const sources = [greenLogo, photoLogo]
-    const changer = setInterval(() => {
-        setPhotoUrl((prev) => (
-          prev === sources[0] ? sources[1] : sources[0]
-        ))
-      }, 5000)
-    return clearInterval(changer)
-  }, [])
 
   const [topListen, setTopListen] = useState<boolean>(true)
   useEffect(() => {
     const handleHeaderHide = () => {
-      console.log(window.scrollY, window.scrollX)
       setTopListen(window.scrollY < 100);
     }
     window.addEventListener('scroll', handleHeaderHide, { passive: true })
@@ -193,10 +180,8 @@ function PhotoLogoChanger() {
   }, [])
   return (
     <>
-      {!topListen ? <img src={photoUrl} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" /> : null}
-      <h1 className="title-head title-head-index">
-        {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Voltar"}</h1>}
-      </h1>
+      {!topListen ? <img src={greenLogo} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" /> : null}
+      {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Voltar"}</h1>}
     </>
   )
 }
@@ -225,34 +210,6 @@ function RightSideHeader() {
 
 
 
-type RedirecterLinkProps = {
-  toTarget?: string,
-  isActive?: boolean
-}
-/* >> new funcionality, replacing buttons with a hidden menu <<
-function MenuOptionsPopup() {
-    return(
-      <div className="container-menu-options tempHide">
-        <MenuOptionsPopupBtnWrap toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
-        <MenuOptionsPopupBtnWrap toTarget='direct' isActive={location.pathname === "/direct"} />
-      </div>
-    )
-}
-function MenuOptionsPopupBtnWrap({toTarget, isActive}: RedirecterLinkProps) {
-  if (toTarget=="") return
-  const showcaseForm = capitalize(`${toTarget}`)
-  const local = `/${toTarget}`
-  const marker = isActive ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
-  
-  return (
-      <Link to={isActive ? "/" : local} className="menuOptionsPopupBtn" style={marker}>
-        {
-          showcaseForm=="Direct" ? "Contato" : showcaseForm
-        }
-      </Link>
-  )
-}
-  */
 export function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
   const local = `/${toTarget}`
   const marker = isActive ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
@@ -265,18 +222,12 @@ export function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
     </>
   )
 }
-/* >> temporaly unused <<
-function capitalize(word: string): string {
-  if(!word) return ''
-  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-}
-  */
 
 function FooterGlobal() {
   return (
     <>
-      <footer id="pt-version-footer-index gaussian-blur">
-        <div className="1">
+      <footer>
+        <div>
           <div className="flex-hor-footer">
             <a>Sobre</a>
             <a href="https://ko-fi.com/rhscode">Doação</a>
@@ -286,11 +237,29 @@ function FooterGlobal() {
             <a href="https://ryanhenrqq.github.io/RHSSites/">Compartibilidade</a>
           </div>
         </div>
-        <div className="1 align last-line-footer">
-          <small><a href="#">© 2024 RHS Code </a> - é uma marca digital criada por Ryan Henrique</small>
+        <div className="last-line-footer">
+          <small><b>© 2024 RHS Code </b> - é uma marca digital criada por Ryan Henrique</small>
         </div>
       </footer>
     </>
+  )
+}
+
+function LoadingDown() {
+  return(
+    <div style={
+      {
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        width:'100%',
+        padding:'2rem'
+      }
+      }>
+      <h3>Carregando pagina...</h3>
+      <p>Não se preocupe, vai ser rápido!</p>
+    </div>
   )
 }
 
