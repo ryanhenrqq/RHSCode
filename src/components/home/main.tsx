@@ -36,7 +36,6 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         onLanguageChange(e.target.value as Language);
     };
-    const { lang, setLang } = useOutletContext<ContextType>();
     const gaussianBlurDarker = {
         backgroundColor: "#0000007d",
         backdropFilter: "blur(5px)",
@@ -45,7 +44,7 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
     return (
         <>
             <main className="flex-ver" id="pt-version-index">
-                <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
+                <select className="lang-sel-body hide" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
@@ -149,7 +148,6 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         onLanguageChange(e.target.value as Language);
     };
-    const { lang, setLang } = useOutletContext<ContextType>();
     const gaussianBlurDarker = {
         backgroundColor: "#0000007d",
         backdropFilter: "blur(5px)",
@@ -158,7 +156,7 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
     return (
         <>
             <main className="flex-ver" id="pt-version-index">
-                <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
+                <select className="lang-sel-body hide" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
