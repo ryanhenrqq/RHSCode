@@ -43,12 +43,24 @@ img, svg {
     display: none;
 }
 
+.index-txt-limedup {
+    color: #338119;
+    animation: darkenColorPulse 4s linear infinite;
+    font-size: 42px;
+    width: auto;
+}
 .image-head-inside-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
     padding-right: 24px;
+    padding-top: 10px;
+    position: absolute;
+    left: 80px;
     transition: opacity 0.8s ease-in-out;
 }
 .flex-hor {
@@ -58,6 +70,17 @@ img, svg {
 .flex-ver {
     display: flex;
     flex-direction: column;
+}
+.flex-ver-cambeable{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    line-height: 40px;
+}
+.flex-ver-cambeable h4{
+    text-align: left;
+    font-size: 2.2rem;
 }
 
 .experience-tab-flex {
@@ -119,6 +142,7 @@ img, svg {
     width: 90%;
     margin-left: 12px;
     margin-right: 12px;
+    margin-top: 25px;
 }
 .background-index-txt{
     background-color: black;
@@ -144,13 +168,6 @@ img, svg {
     resize: none;
 }
 
-.index-txt h3 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-.index-txt p {
-    font-size: 22pxpx;
-}
 .image-side-main {
     width: 40%;
     height: 40%;
@@ -332,6 +349,21 @@ img, svg {
 
 }
 
+@keyframes darkenColorPulse{
+    0% {
+        color: #338119;
+    }
+    30% {
+        color: #227701;
+    }
+    80% {
+        color: #758697;
+    }
+    100% {
+        color: #338119;
+    }
+}
+
 @media (max-width: 1420px) {
     .index-txt {
         width: 95%;
@@ -362,9 +394,17 @@ img, svg {
     .flex-hor-buttons{
         flex-direction: column;
     }
+    .image-head-inside-main{
+        left: 30px;
+    }
+    .flex-ver-cambeable{
+        flex-direction: column;
+        text-align: left;
+        line-height: 35px;
+    }
 }
 @media (max-width: 768px) {
-    .index-txt h3 {
+    .index-txt h4 {
         font-size: 28px;
     }
     .index-txt p {

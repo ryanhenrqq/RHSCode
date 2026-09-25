@@ -12,7 +12,7 @@ img, svg {
     pointer-events: none;
 }
 .main {
-    padding-top: 12vh;
+    padding-top: 15vh;
     padding-bottom: 28px;
     animation: anim-lineUp 1s ease;
 
@@ -143,6 +143,9 @@ footer div b:hover {
 }
 
 @media (max-width: 768px) {
+    .main{
+        padding-top: 10vh;
+    }
     .desktopView { display: none;}
     .mobileView { display: flex;}
     .full-head-mobile {

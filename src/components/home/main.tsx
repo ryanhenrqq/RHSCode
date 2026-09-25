@@ -50,9 +50,12 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
                 </select>
                 <div className="flex-hor">
                     <div className="flex-ver index-txt">
-                        <div className="flex-hor">
-                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
-                            <h3>Conheça o <b style={{ color: "#338119"}}>RHS Code</b></h3>
+                        <div className="flex-hor" style={{width:'100%', justifyContent:'flex-start'}}>
+                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" loading="lazy" />
+                            <div className="flex-ver-cambeable">
+                                <h4>Conheça o</h4>
+                                <b className="index-txt-limedup">RHS Code</b>
+                            </div>
                         </div>
                         <div className="index-txt-toptext">
                             <p style={{textAlign:'left'}}>Sou um Programador Front End, focado em criar as melhores e mais amigáveis interfaces de usuário para a sua empresa. Consigo criar as melhores soluções para elevar o nivel de seu website profissional, focando na simplicidade de comandos simples, mas poderosos!</p>
