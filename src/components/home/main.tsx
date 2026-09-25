@@ -1,9 +1,8 @@
 import "./main.css"
 import { Link, useOutletContext } from "react-router-dom"
 
-import { RedirectHeadLink } from "../App"
-import handleLanguageChange from "../App"
-import type { MainHomeProps, Language } from "../types/types"
+import { RedirectHeadLink } from "../../App"
+import type { MainHomeProps, Language } from "../../types/types"
 
 import pyAndJs from '@logo/python-js.png'
 import python from '@logo/python.png'
@@ -47,7 +46,7 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
         <>
             <main className="flex-ver" id="pt-version-index">
                 <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
-                    <option value="port">PT</option>
+                    <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
                 <div className="flex-hor">
@@ -160,7 +159,7 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
         <>
             <main className="flex-ver" id="pt-version-index">
                 <select className="lang-sel-body hide" value={lang} onChange={handleSelectChange}>
-                    <option value="port">PT</option>
+                    <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
                 <div className="flex-hor">
