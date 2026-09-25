@@ -374,6 +374,9 @@ img, svg {
     .image-side-main, .image-side-thirdy {
         display: none;
     }
+    .image-head-inside-main{
+        left: 46px;
+    }
 }
 
 @media (max-width: 1048px) {
@@ -438,5 +441,8 @@ img, svg {
     }
     .thirtyTb p {
         font-weight: 400;
+    }
+    .image-head-inside-main{
+        left: 16px;
     }
 }
