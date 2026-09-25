@@ -121,11 +121,11 @@ export function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
 // FUNÇOES E COMPONENTES
 export function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
   const local = `/${toTarget}`
-  const marker = isActive ? {filter: "invert(100%)"} : {filter: "invert(0%)"}
+  const marker = isActive ? {filter: "invert(1)"} : {filter: "invert(0%)"}
   const imgsrc = toTarget=="portfolio" ? srvPortfolio : srvMessage
   return (
     <>
-      <Link to={isActive ? "/" : local} className="button-head c-head gaussian-blur-darker" style={marker}>
+      <Link to={isActive ? "/" : local} className="button-head c-head" style={marker}>
         <img src={imgsrc} alt={local} className="button-head-image" loading="lazy" />
       </Link>
     </>
