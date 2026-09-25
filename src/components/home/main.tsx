@@ -44,66 +44,47 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
     return (
         <>
             <main className="flex-ver" id="pt-version-index">
-                <select className="lang-sel-body hide" value={currentLang} onChange={handleSelectChange}>
+                <select className="lang-sel-body" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
                 <div className="flex-hor">
                     <div className="flex-ver index-txt">
-                        
-                        <div className="flex-hor header-main-splash" style={{display: "none"}}>
-                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
-                            <h3>Conheça o RHS Code</h3>
-                            <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
-                        </div>
-
                         <div className="flex-hor">
                             <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
                             <h3>Conheça o <b style={{ color: "#338119"}}>RHS Code</b></h3>
                         </div>
-                        <p>Sou um Programador Front End, focado em criar as melhores e mais amigáveis interfaces de usuário para a sua empresa. Consigo criar as melhores soluções para elevar o nivel de seu website profissional, focando na simplicidade de comandos simples, mas poderosos!</p>
-                        <p>Experiencia prática e projetos pessoais escritos em:</p>
+                        <div className="index-txt-toptext">
+                            <p style={{textAlign:'left'}}>Sou um Programador Front End, focado em criar as melhores e mais amigáveis interfaces de usuário para a sua empresa. Consigo criar as melhores soluções para elevar o nivel de seu website profissional, focando na simplicidade de comandos simples, mas poderosos!</p>
+                            <p style={{textAlign:'left'}}>Experiencia prática e projetos pessoais escritos em:</p>
+                        </div>
                         <div className="experience-tab-flex">
                             <div className="experience-tab">
                                 <img src={python} alt="Python Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
-                                    <div>Python</div>
-                                </div>
-                            </div>
-                            <div className="experience-tab">
-                                <img src={react} alt="React Logo" draggable="false" loading="lazy" />
-                                <div className="right-experience-tab">
-                                    <div>React</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Criando nova experiencia ativamente em:</p>
-                        <div className="experience-tab-flex">
-                            <div className="experience-tab">
-                                <img src={java} alt="Java Logo" draggable="false" loading="lazy" />
-                                <div className="right-experience-tab">
-                                    <div>Java</div>
+                                    <div style={{textAlign:'left'}}>Python</div>
                                 </div>
                             </div>
                             <div className="experience-tab">
                                 <img src={typescript} alt="TS Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
-                                    <div>TypeScript</div>
+                                    <div style={{textAlign:'left'}}>TypeScript</div>
                                 </div>
                             </div>
                         </div>
-                        <p>
-                            Você pode estar vendo as fontes no meu perfil do&nbsp;
-                            <a href="https://github.com/ryanhenrqq/">GitHub.</a>
-                        </p>
-                        <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
-                            <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                            <div className="button-main-top-txt">Contate-me</div>
-                        </Link>
-                        <Link to="/portfolio" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
-                            <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
-                            <div className="button-main-top-txt">Portfólio</div>
-                        </Link>
+                        <div className="index-txt-toptext">
+                            <p style={{textAlign:'left'}}>Você pode estar vendo as fontes no meu perfil do&nbsp;<a href="https://github.com/ryanhenrqq/">GitHub</a>&nbsp;.</p>
+                        </div>
+                        <div className="flex-hor-buttons">
+                            <Link to="/direct" className="button-main-top" style={gaussianBlurDarker}>
+                                <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
+                                <div className="button-main-top-txt">Contate-me</div>
+                            </Link>
+                            <Link to="/portfolio" className="button-main-top" style={gaussianBlurDarker}>
+                                <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
+                                <div className="button-main-top-txt">Portfólio</div>
+                            </Link>
+                        </div>
                     </div>
                     <div className="image-side-main">
                         <img src={pyAndJs} alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />
@@ -155,46 +136,26 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
     }
     return (
         <>
-            <main className="flex-ver" id="pt-version-index">
-                <select className="lang-sel-body hide" value={currentLang} onChange={handleSelectChange}>
+            <main className="flex-ver">
+                <select className="lang-sel-body" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
                 <div className="flex-hor">
                     <div className="flex-ver index-txt">
-                        
-                        <div className="flex-hor header-main-splash" style={{display: "none"}}>
-                            <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
-                            <h3>Meet RHS Code</h3>
-                            <RedirectHeadLink toTarget='portfolio' isActive={location.pathname === "/portfolio"} />
-                        </div>
-
                         <div className="flex-hor">
                             <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
                             <h3>Meet <b style={{ color: "#338119"}}>RHS Code</b></h3>
                         </div>
-                        <p>I'm a Front-End Developer focused on creating the best, most user-friendly interfaces for your business. I build solutions that elevate your professional website by keeping things simple, intuitive, and powerful.</p>
-                        <p>Practical experience and personal projects written in:</p>
+                        <div className="index-txt-toptext">
+                            <p style={{textAlign:'left'}}>I'm a Front-End Developer focused on creating the best, most user-friendly interfaces for your business. I build solutions that elevate your professional website by keeping things simple, intuitive, and powerful.</p>
+                            <p style={{textAlign:'left'}}>Practical experience and personal projects written in:</p>
+                        </div>
                         <div className="experience-tab-flex">
                             <div className="experience-tab">
                                 <img src={python} alt="Python Logo" draggable="false" loading="lazy" />
                                 <div className="right-experience-tab">
                                     <div>Python</div>
-                                </div>
-                            </div>
-                            <div className="experience-tab">
-                                <img src={react} alt="React Logo" draggable="false" loading="lazy" />
-                                <div className="right-experience-tab">
-                                    <div>React</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Actively creating a new experience in:</p>
-                        <div className="experience-tab-flex">
-                            <div className="experience-tab">
-                                <img src={java} alt="Java Logo" draggable="false" loading="lazy" />
-                                <div className="right-experience-tab">
-                                    <div>Java</div>
                                 </div>
                             </div>
                             <div className="experience-tab">
@@ -204,15 +165,20 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
                                 </div>
                             </div>
                         </div>
-                        <p>
-                            You may be viewing the sources on my&nbsp;
-                            <a href="https://github.com/ryanhenrqq/">GitHub</a>
-                            &nbsp;profile.
-                        </p>
-                        <Link to="/direct" id="contact-now" className="button-main-top" style={gaussianBlurDarker}>
-                            <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                            <div className="button-main-top-txt">Contact me</div>
-                        </Link>
+                        <div className="index-txt-toptext">
+                            <p style={{textAlign:'left'}}>You may be viewing the sources on my&nbsp;<a href="https://github.com/ryanhenrqq/">GitHub</a>&nbsp;profile.</p>
+                        </div>
+                        <div className="flex-hor-buttons">
+                            <Link to="/direct" className="button-main-top" style={gaussianBlurDarker}>
+                                <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
+                                <div className="button-main-top-txt">Contact me</div>
+                            </Link>
+                            <Link to="/portfolio" className="button-main-top" style={gaussianBlurDarker}>
+                                <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
+                                <div className="button-main-top-txt">Portfólio</div>
+                            </Link>
+                        </div>
+                        
                     </div>
                     <div className="image-side-main">
                         <img src={pyAndJs} alt="Logos de Python e JavaScript" className="main-splash-img" draggable="false" loading="lazy" />

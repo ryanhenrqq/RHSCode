@@ -63,9 +63,9 @@ img, svg {
 .experience-tab-flex {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 80%;
     gap: 16px;
 }
 .experience-tab {
@@ -73,12 +73,11 @@ img, svg {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    text-align: left;
     gap: 10px;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     border: solid 2px rgb(117, 117, 117);
     border-radius: 24px;
     background: linear-gradient(135deg, #000000 28%, #002b2b 100%);
@@ -87,6 +86,7 @@ img, svg {
     background: linear-gradient(135deg, #000000 28%, #00afaf 100%);
     cursor: pointer;
 }
+.right-experience-tab{width: 100%;}
 .right-experience-tab div {
     font-size: 36px;
     font-weight: 500;
@@ -110,15 +110,17 @@ img, svg {
 
 .index-txt {
     width: 50%;
-    margin: 20px;
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
     z-index: 1;
 }
+.index-txt-toptext{
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+}
 .background-index-txt{
     background-color: black;
-    padding: 42px;
     width: 50%;
-    margin: 20px;
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
     z-index: 1;
     border: solid 2px white;
@@ -162,22 +164,28 @@ img, svg {
     filter: drop-shadow(6px 6px 7px grey);
 }
 
+.flex-hor-buttons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    gap: 18px;
+}
 .button-main-top{
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin-top: 5%;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 5%;
     padding-top: 5%;
     border-radius: 24px;
     box-shadow:  2px 2px 4px black;
     background-color: #393939;
     color: white;
-    animation-delay: 1s;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 .button-main-top:hover{
     background-color: #000000;
@@ -190,7 +198,7 @@ img, svg {
     box-shadow: inset 6px 6px 10px grey;
 }
 .button-main-top-txt{
-    font-size: clamp(1rem, 2.5vw + 0.5rem, 2.5rem);
+    font-size: clamp(0.8rem, 2.2vw + 0.4rem, 2.2rem);
     font-weight: bolder;
     animation: colorShift 8s infinite ease-in-out;
 }
@@ -348,6 +356,9 @@ img, svg {
     }
     .lang-sel-body {
         display: block;
+    }
+    .flex-hor-buttons{
+        flex-direction: column;
     }
 }
 @media (max-width: 768px) {
