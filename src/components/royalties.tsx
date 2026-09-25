@@ -41,6 +41,12 @@ export default function RoyaltiesPage() {
                     <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a>
                 </li>
                 <li>
+                    <a href="https://www.flaticon.com/free-icons/tik-tok" title="tik tok icons">Tik tok icons created by Magnific - Flaticon</a>
+                </li>
+                <li>
+                    <a href="https://www.flaticon.com/free-icons/youtube" title="youtube icons">Youtube icons created by Md Tanvirul Haque - Flaticon</a>
+                </li>
+                <li>
                     <b>PIXABAY - </b><p>Macbook View on a desk - </p><i>Image by <a href="https://pixabay.com/users/yeiferr-13554766/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4795762">yeiferr</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4795762">Pixabay</a></i>
                 </li>
             </ul>

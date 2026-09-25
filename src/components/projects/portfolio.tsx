@@ -3,6 +3,8 @@ import "./portfolio.css"
 import github from '@ico/github.png'
 import instagramIcon from '@ico/instagram.png'
 import linkedinIcon from '@ico/linkedin.png'
+import youtIcon from '@ico/youtube.png'
+import tiktokIcon from '@ico/tik-tok.png'
 
 import type { CardGeneratorObjects, RedirectConfigs, PropsDefinerHeader } from "../../types/types"
 
@@ -10,6 +12,8 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     github: {type: 'external', url: 'https://github.com/ryanhenrqq/'},
     instagram: {type: 'external', url: 'https://www.instagram.com/rhs.code/'},
     linkedin: {type: 'external', url: 'https://www.linkedin.com/in/ryan-silva-791677300/?locale=pt-BR'},
+    youtube: {type: 'external', url: 'https://www.youtube.com/@SrRyaaanZ/shorts'},
+    tiktok: {type: 'external', url: 'https://www.tiktok.com/@rhs.code'},
 
     // Direct to website - links
     floodthecookie: {type: 'external', url: 'https://ryanhenrqq.github.io/FloodTheCookie/'},
@@ -49,6 +53,8 @@ export default function MainPortfolio() {
                 <div className="portfolio-grid">
                     <CardGenerator projName="GitHub" projDesc="Meu perfil profissional do GitHub, contendo todo o meu portfólio." imgSrc={github} invertImg={true} hasPage={true} redirectPg="github" redirectSource="" badgeSrc="" />
                     <CardGenerator projName="Instagram" projDesc="Eu faço conteúdo abordando Programação e CyberSegurança. Você vai gostar!" imgSrc={instagramIcon} invertImg={false} hasPage={true} redirectPg="instagram" redirectSource="" badgeSrc="" />
+                    <CardGenerator projName="YouTube" projDesc="Meu conteúdo do instagram também está aqui! Olhe a aba Shorts." imgSrc={youtIcon} invertImg={false} hasPage={true} redirectPg="youtube" redirectSource="" badgeSrc="" />
+                    <CardGenerator projName="TikTok" projDesc="Meu conteúdo do instagram também está aqui!" imgSrc={tiktokIcon} invertImg={true} hasPage={true} redirectPg="tiktok" redirectSource="" badgeSrc="" />
                     <CardGenerator projName="Linkedin" projDesc="Uma visão geral para empresas. Tem muita coisa interessante aqui." imgSrc={linkedinIcon} invertImg={false} hasPage={true} redirectPg="linkedin" redirectSource="" badgeSrc="" />
                 </div>
                 <h3>Projetos solidos</h3>
