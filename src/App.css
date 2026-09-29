@@ -12,7 +12,7 @@ img, svg {
     pointer-events: none;
 }
 .main {
-    padding-top: 15vh;
+    padding-top: 13vh;
     padding-bottom: 28px;
     animation: anim-lineUp 1s ease;
 

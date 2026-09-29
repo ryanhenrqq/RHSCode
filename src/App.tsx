@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { createHashRouter, RouterProvider, Outlet, Link, useLocation } from 'react-router-dom'
 
@@ -87,24 +87,6 @@ function FooterGlobal() {
         </div>
       </footer>
     </>
-  )
-}
-
-function LoadingDown() {
-  return(
-    <div style={
-      {
-        display:'flex',
-        flexDirection:'column',
-        justifyContent:'center',
-        alignItems:'center',
-        width:'100%',
-        padding:'2rem'
-      }
-      }>
-      <h3>Carregando pagina...</h3>
-      <p>Não se preocupe, vai ser rápido!</p>
-    </div>
   )
 }
 
