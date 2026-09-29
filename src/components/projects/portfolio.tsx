@@ -5,6 +5,7 @@ import instagramIcon from '@ico/instagram.png'
 import linkedinIcon from '@ico/linkedin.png'
 import youtIcon from '@ico/youtube.png'
 import tiktokIcon from '@ico/tik-tok.png'
+import greenLogo from '/logo-image.png'
 
 import type { CardGeneratorObjects, RedirectConfigs, PropsDefinerHeader } from "../../types/types"
 
@@ -21,6 +22,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     todotasksts: {type: 'external', url: 'https://ryanhenrqq.github.io/ToDoTasks-Ts/'},
     climaopenweather: {type: 'external', url: 'https://ryanhenrqq.github.io/ClimaComOpenWeather/'},
     rweather: {type: 'external', url: 'https://rweather-alpha.vercel.app/'},
+    rhssites: {type: 'external', url: 'https://ryanhenrqq.github.io/RHSSites/'},
 
     // Source codes (sc) - to github
     floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
@@ -30,7 +32,8 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     todotaskstssc: {type: 'external', url: 'https://github.com/ryanhenrqq/ToDoTasks-Ts'},
     climaopenweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/ClimaComOpenWeather'},
     kalccalculadoralitesc: {type: 'external', url: 'https://github.com/ryanhenrqq/KalcCalculadoraLite'},
-    rweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/RWeather'}
+    rweathersc: {type: 'external', url: 'https://github.com/ryanhenrqq/RWeather'},
+    rhssitessc: {type: 'external', url: 'https://github.com/ryanhenrqq/RHSSites'},
 }
 
 const handleRedirect = (key: string) => {
@@ -60,13 +63,13 @@ export default function MainPortfolio() {
                 <h3>Projetos solidos</h3>
                 <div className="portfolio-grid">
                     <CardGenerator projName="FloodTheCookie" projDesc="Jogo Point-n-Click interativo e relaxante!" imgSrc="https://ryanhenrqq.github.io/FloodTheCookie/src/res/fav/favicon.png" invertImg={false} hasPage={true} redirectPg="floodthecookie" redirectSource="floodthecookiesc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
+                    <CardGenerator projName="RWeather" projDesc="Webapp para consultar condições climaticas, pesquisando pelo nome de sua cidade. Usa API." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/RWeather/main/public/favicon.png" invertImg={true} hasPage={true} redirectPg="rweather" redirectSource="rweathersc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="ToDoTasks" projDesc="Crie tarefas e lembretes pelo navegador! Recriado em TypeScript" imgSrc="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" invertImg={true} hasPage={true} redirectPg="todotasksts" redirectSource="todotaskstssc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="OoniquePass" projDesc="Gerador de senhas simples e objetivo." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/OoniquePass/main/res/favicon.png" invertImg={false} hasPage={false} redirectPg="" redirectSource="ooniquepasssc" badgeSrc="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
                 </div>
                 
                 <h3>Projetos em desenvolvimento</h3>
                 <div className="portfolio-grid">
-                    <CardGenerator projName="RWeather (Destaque)" projDesc="Webapp para consultar condições climaticas, pesquisando pelo nome de sua cidade. Usa API." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/RWeather/main/public/favicon.png" invertImg={true} hasPage={true} redirectPg="rweather" redirectSource="rweathersc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="KalcCalculadora" projDesc="Aplicativo web de calculadora e formulas." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="kalccalculadorasc" badgeSrc="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000" />
                     <CardGenerator projName="ToDoTasks Legacy" projDesc="Crie tarefas e lembretes pelo navegador!" imgSrc="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" invertImg={true} hasPage={true} redirectPg="todotasks" redirectSource="todotaskssc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
                     <CardGenerator projName="Clima com OpenWeather" projDesc="Demo de um App de Clima pronto para a API OpenWeather" imgSrc="https://ryanhenrqq.github.io/ClimaComOpenWeather/components/res/icon/sun.svg" invertImg={true} hasPage={true} redirectPg="climaopenweather" redirectSource="climaopenweathersc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
@@ -75,6 +78,7 @@ export default function MainPortfolio() {
                 <h3>Rascunhos (ou Limbo)</h3>
                 <div className="portfolio-grid">
                     <CardGenerator projName="KalcCalculadora Lite" projDesc="Aplicativo android de calculadora e formulas." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="kalccalculadoralitesc" badgeSrc="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+                    <CardGenerator projName="RHS Sites (2024)" projDesc="A Primeira versão do meu site para venda de criação de sites." imgSrc={greenLogo} invertImg={false} hasPage={true} redirectPg="rhssites" redirectSource="rhssitessc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
                 </div>
             </main>    
         </>
