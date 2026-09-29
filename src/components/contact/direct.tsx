@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './direct.css'
 
 interface ChildProps{
@@ -27,15 +27,23 @@ export default function Direct() {
 function FormBody({onSucess}: ChildProps) {
     const [loading, setLoading] = useState<boolean>(false)
     const [errMessage, setErrMessage] = useState<string | null>(null)
+    const [startTm, setStartTm] = useState(0)
+    const m = 'mbd'
+    const j = 'djr'
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
-
+        const end = 'wd'
+        const elapsedTm = Date.now() - startTm
+        if (elapsedTm <3000) {
+            console.error('Envio muito rapido, por favor, revise o formulário.')
+            return
+        }
         const formData = new FormData(e.currentTarget)
         const data = Object.fromEntries(formData.entries()) as unknown as UserFormData
-
+        const st = `${j}${end}`
         try {
-            const res = await fetch('https://formspree.io/f/mbddjrwd', {
+            const res = await fetch(`https://formspree.io/f/${m}${st}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -54,6 +62,9 @@ function FormBody({onSucess}: ChildProps) {
             setLoading(false)
         }
     }
+    useEffect(() => {
+        setStartTm(Date.now())
+    })
     return (
         <form className="contact-email-form" id="contact-email-form" autoComplete="off" onSubmit={handleSubmit}>
             <div className='introduction-explaining flex-ver'>
@@ -97,13 +108,16 @@ function FormBody({onSucess}: ChildProps) {
             </div>
             <label htmlFor="name-email">Mensagem:</label>
             <textarea name="content-email" id="content-email" placeholder="Mensagem" required></textarea>
+            <div style={{display:'none'}} aria-hidden='true'>
+                <input type='text' name='_gotcha' tabIndex={-1} autoComplete='off' placeholder='n4o pr3ench4 1sso 5e f0r hum4n0' />
+            </div>
             {errMessage && (
                 <div style={{ color: 'red', marginBottom: '1rem' }}>
                 ⚠️ {errMessage}
                 </div>
             )}
-            <button type="submit" className="button-main-top">
-                    {loading ? 'Enviando' : 'Enviar'}
+            <button type="submit" className="button-main-top" disabled={loading}>
+                {loading ? 'Enviando' : 'Enviar'}
             </button>
         </form>
     )
