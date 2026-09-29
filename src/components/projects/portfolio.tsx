@@ -52,7 +52,7 @@ const handleRedirect = (key: string) => {
     }
 }
 
-export default function MainPortfolio() {
+export function MainPortfolio() {
     return (
         <>
             <main className="flex-ver gapper">

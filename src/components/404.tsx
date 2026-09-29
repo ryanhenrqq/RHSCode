@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import github from "@ico/github.png"
 import back from "@ico/return-button.png"
 
-export default function NotFoundPage() {
+export function NotFoundPage() {
     const gaussianBlurDarker = {
         backgroundColor: "#0000007d",
         backdropFilter: "blur(5px)",

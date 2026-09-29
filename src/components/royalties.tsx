@@ -1,7 +1,7 @@
 import "./royalties.css"
 
 // First implementation! (8/9/26) - I't will be better distributed and organized
-export default function RoyaltiesPage() {
+export function RoyaltiesPage() {
     return (
         <>
             <h1 className="section flex-col">Icones</h1>

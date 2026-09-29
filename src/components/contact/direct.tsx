@@ -12,7 +12,7 @@ interface UserFormData{
     type: string;
     content: string
 }
-export default function Direct() {
+export function Direct() {
     const [sentView, setSentView] = useState<boolean>(false)
     return (
         <>  

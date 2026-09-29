@@ -2,11 +2,11 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import './App.css'
 import { createHashRouter, RouterProvider, Outlet, Link, useLocation } from 'react-router-dom'
 
-const HomePage = lazy(() => import('./components/home/main'))
-const MainPortfolio = lazy(() => import('./components/projects/portfolio'))
-const Direct = lazy(() => import('./components/contact/direct'))
-const RoyaltiesPage = lazy(() => import('./components/royalties'))
-const NotFoundPage = lazy(() => import('./components/404'))
+import { HomePage } from './components/home/main'
+import { MainPortfolio } from './components/projects/portfolio'
+import { Direct } from './components/contact/direct'
+import { RoyaltiesPage } from './components/royalties'
+import { NotFoundPage } from './components/404'
 import type { Language } from './types/types'
 import { FullHeaderDesktop, FullHeaderMobile  } from './components/header/header'
 import { useIsMobile } from './types/mobile'
@@ -24,43 +24,23 @@ const route = createHashRouter([
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={<LoadingDown />} >
-            <HomePage />
-          </Suspense>
-        )
+        element: <HomePage />
       },
       {
         path: "/portfolio",
-        element: (
-          <Suspense fallback={<LoadingDown />} >
-            <MainPortfolio />
-          </Suspense>
-        )
+        element: <MainPortfolio />
       },
       {
         path: "/direct",
-        element: (
-          <Suspense fallback={<LoadingDown />} >
-            <Direct />
-          </Suspense>
-        )
+        element: <Direct />
       },
       {
         path: "/royalties",
-        element: (
-          <Suspense fallback={<LoadingDown />} >
-            <RoyaltiesPage />
-          </Suspense>
-        )
+        element: <RoyaltiesPage />
       },
       {
         path:"*",
-        element: (
-          <Suspense fallback={<LoadingDown />} >
-            <NotFoundPage />
-          </Suspense>
-          )
+        element: <NotFoundPage />
       }
     ]
   }

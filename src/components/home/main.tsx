@@ -22,7 +22,7 @@ export interface ContextType {
   setLang: (lang: Language) => void;
 }
 
-export default function HomePage() {
+export function HomePage() {
   const { lang, setLang } = useOutletContext<ContextType>();
 
   return lang === 'pt' ? (
