@@ -81,11 +81,11 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
                         <div className="flex-hor-buttons">
                             <Link to="/direct" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                                <div className="button-main-top-txt">Contato</div>
+                                <div className="button-main-top-txt" style={{textAlign:'left'}}>Contato</div>
                             </Link>
                             <Link to="/portfolio" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
-                                <div className="button-main-top-txt">Portfólio</div>
+                                <div className="button-main-top-txt" style={{textAlign:'left'}}>Portfólio</div>
                             </Link>
                         </div>
                     </div>
