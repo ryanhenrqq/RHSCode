@@ -43,12 +43,12 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
     }
     return (
         <>
-            <main className="flex-ver" id="pt-version-index">
+            <main className="flex-ver main-ct-1">
                 <select className="lang-sel-body" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
                 </select>
-                <div className="flex-hor">
+                <div className="flex-hor main-ct-2">
                     <div className="flex-ver index-txt">
                         <div className="flex-hor" style={{width:'100%', justifyContent:'flex-start'}}>
                             <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" loading="lazy" />
@@ -81,7 +81,7 @@ export function MainHome({ currentLang, onLanguageChange }: MainHomeProps) {
                         <div className="flex-hor-buttons">
                             <Link to="/direct" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                                <div className="button-main-top-txt">Contate-me</div>
+                                <div className="button-main-top-txt">Contato</div>
                             </Link>
                             <Link to="/portfolio" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />

@@ -10,6 +10,10 @@ html {
     background-color: black;
 }
 
+.main-ct-1{
+    width: 80%;
+}
+
 .lang-sel-body {
     justify-content: center;
     align-items: center;
@@ -60,7 +64,7 @@ img, svg {
     padding-right: 24px;
     padding-top: 10px;
     position: absolute;
-    left: 80px;
+    left: 180px;
     transition: opacity 0.8s ease-in-out;
 }
 .flex-hor {
@@ -85,12 +89,12 @@ img, svg {
 
 .experience-tab-flex {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     gap: 16px;
 }
 .experience-tab {
@@ -98,6 +102,8 @@ img, svg {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    width: 80%;
+    height: 40px;
     gap: 10px;
     padding-left: 5%;
     padding-right: 5%;
@@ -118,8 +124,8 @@ img, svg {
     letter-spacing: 5px;
 }
 .experience-tab img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
     padding: 9px;
     border: solid 1px white;
@@ -142,7 +148,7 @@ img, svg {
     width: 90%;
     margin-left: 12px;
     margin-right: 12px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .background-index-txt{
     background-color: black;
@@ -203,8 +209,8 @@ img, svg {
     padding-top: 5%;
     border-radius: 24px;
     box-shadow:  2px 2px 4px black;
-    background-color: #393939;
-    color: white;
+    background: #0000007a;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.600) 0%, rgba(0, 0, 0, 0.600) 48%, rgba(105, 105, 105, 0.600) 100%);
 }
 .button-main-top:hover{
     background-color: #000000;
@@ -212,11 +218,13 @@ img, svg {
     cursor: pointer;
 }
 .button-main-top:active {
-    background-color: #000000;
-    color: white;
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.600) 0%, rgba(0, 0, 0, 0.600) 48%, rgba(105, 105, 105, 0.600) 100%);
     box-shadow: inset 6px 6px 10px grey;
 }
 .button-main-top-txt{
+    color: rgb(202, 193, 193);
+    filter: drop-shadow(0 1px 1px rgb(48, 47, 47));
     font-size: clamp(0.8rem, 2.2vw + 0.4rem, 2.2rem);
     font-weight: bolder;
     animation: colorShift 8s infinite ease-in-out;
@@ -260,6 +268,7 @@ img, svg {
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.24);
     position: relative;
+    gap: 24px;
 }
 .secondTb-img-back {
     position: absolute;
@@ -375,11 +384,12 @@ img, svg {
         display: none;
     }
     .image-head-inside-main{
-        left: 46px;
+        left: 190px;
     }
 }
 
 @media (max-width: 1048px) {
+    .main-ct-1{width: 85%;}
     .index-txt h3 {
         font-size: 41px;
     }
@@ -398,7 +408,7 @@ img, svg {
         flex-direction: column;
     }
     .image-head-inside-main{
-        left: 30px;
+        left: 90px;
     }
     .flex-ver-cambeable{
         flex-direction: column;
@@ -407,6 +417,7 @@ img, svg {
     }
 }
 @media (max-width: 768px) {
+    .main-ct-1{width: 93%;}
     .index-txt h4 {
         font-size: 28px;
     }
@@ -443,6 +454,6 @@ img, svg {
         font-weight: 400;
     }
     .image-head-inside-main{
-        left: 16px;
+        left: 38px;
     }
 }
