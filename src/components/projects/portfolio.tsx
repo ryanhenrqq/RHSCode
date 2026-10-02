@@ -101,17 +101,19 @@ function CardGenerator({projName, projDesc, imgSrc, invertImg, hasPage, redirect
             </div>
             <div className="flex-hor main-item-container">
                 {
-                    hasPage?<button onClick={() => handleRedirect(`${redirectPg}`)}>Abrir</button>:
-                    <button disabled>Abrir</button>
+                    hasPage?<button className="main-item-button" onClick={() => handleRedirect(`${redirectPg}`)}>Abrir</button>:
+                    <button disabled className="main-item-button">Abrir</button>
                 }
                 {
-                    redirectSource!=''?<button onClick={() => handleRedirect(`${redirectSource}`)}>GitHub</button>:null
+                    redirectSource!=''?<button className="main-item-button" onClick={() => handleRedirect(`${redirectSource}`)}>GitHub</button>:null
                 }
             </div>
             {badgeSrc!=''?
                 <div className="flex-hor footer-item-container">
-                    <b>Escrito em </b>
-                    <img src={badgeSrc} alt="" className="portfolio-written-lang" />
+                    <div className="portf-footer-badge-div">
+                        <img src={badgeSrc} alt="" className="portfolio-written-lang" />
+                        <div className="secTb-badges-logo-shadow"></div>
+                    </div>
                 </div>:
                 null
             }

@@ -145,35 +145,7 @@ footer div b:hover {
 
 @media (max-width: 768px) {
     .main{
-        padding-top: 10vh;
-    }
-    .desktopView { display: none;}
-    .mobileView { display: flex;}
-    .full-head-mobile {
-        width: 88%;
-        margin: 18px;
-    }
-    #lang-sel {
-        display: none;
-    }
-    .lang-sel-body {
-        display: block;
-    }
-    .title-head {
-        font-size: 28px;
-    }
-    .image-head {
-        display: none;
-    }
-    .button-head {
-        padding: 8px;
-    }
-    .button-head img {
-        width: 28px;
-        height: 28px;
-    }
-    .button-head p{
-        font-size: 10px;
+        padding-top: 15vh;
     }
     .flex-hor-footer{
         flex-direction: column;

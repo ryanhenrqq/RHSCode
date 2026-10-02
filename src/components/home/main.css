@@ -50,7 +50,6 @@ img, svg {
 
 .index-txt-limedup {
     color: #338119;
-    animation: darkenColorPulse 4s linear infinite;
     font-size: 42px;
     width: auto;
 }
@@ -153,7 +152,6 @@ img, svg {
     margin-right: 12px;
     margin-top: 10px;
 }
-.index-txt-toptext:hover{cursor:pointer;}
 .background-index-txt{
     background-color: black;
     width: 50%;
@@ -214,9 +212,19 @@ img, svg {
     border-radius: 24px;
     background: #0000007a;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.600) 0%, rgba(0, 0, 0, 0.600) 48%, rgba(105, 105, 105, 0.600) 100%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-main-top:hover{
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 3px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
 .button-main-top:active {
@@ -393,21 +401,6 @@ img, svg {
     object-fit: cover;
     width: 100%;
 
-}
-
-@keyframes darkenColorPulse{
-    0% {
-        color: #338119;
-    }
-    30% {
-        color: #227701;
-    }
-    80% {
-        color: #758697;
-    }
-    100% {
-        color: #338119;
-    }
 }
 
 @media (max-width: 1320px) {

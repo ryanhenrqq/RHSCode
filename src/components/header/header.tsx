@@ -69,7 +69,7 @@ function PhotoLogoChanger() {
   }, [])
   return (
     <>
-      {!topListen ? <img src={greenLogo} alt="Logo RHS Sites" className="image-head" id="image-head" loading="lazy" /> : null}
+      {!topListen ? <img src={greenLogo} alt="Logo RHS Sites" className="image-head" loading="lazy" /> : null}
       {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Voltar"}</h1>}
     </>
   )
@@ -121,7 +121,8 @@ export function FullHeaderMobile({classNaming}: FullHeaderMobileProps) {
 // FUNÇOES E COMPONENTES
 export function RedirectHeadLink({toTarget, isActive}: RedirecterLinkProps) {
   const local = `/${toTarget}`
-  const marker = isActive ? {filter: "invert(1)"} : {filter: "invert(0%)"}
+  //const marker = isActive ? {filter: "invert(1)"} : {filter: "invert(0%)"}
+  const marker = {filter: "invert(0%)"}
   const imgsrc = toTarget=="portfolio" ? srvPortfolio : srvMessage
   return (
     <>
