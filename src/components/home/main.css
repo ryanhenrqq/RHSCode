@@ -373,15 +373,13 @@ img, svg {
     }
 }
 
-@media (max-width: 1420px) {
+@media (max-width: 1320px) {
+    .main-ct-1{width: 95%;}
     .index-txt {
         width: 95%;
     }
     .index-txt h3 {
         font-size: 44px;
-    }
-    .image-side-main, .image-side-thirdy {
-        display: none;
     }
     .image-head-inside-main{
         left: 190px;
@@ -389,7 +387,9 @@ img, svg {
 }
 
 @media (max-width: 1048px) {
-    .main-ct-1{width: 85%;}
+    .image-side-main, .image-side-thirdy {
+        display: none;
+    }
     .index-txt h3 {
         font-size: 41px;
     }

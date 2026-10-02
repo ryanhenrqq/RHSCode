@@ -124,8 +124,8 @@
     object-fit: cover;
     filter: invert(1);
 }
-@media (max-width:1100px){
-    .full-head-desktop{width: 88%;}
+@media (max-width:1320px){
+    .full-head-desktop{width: 95%;}
 }
 @media (max-width: 768px) {
     .desktopView { display: none;}
