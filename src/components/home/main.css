@@ -153,6 +153,7 @@ img, svg {
     margin-right: 12px;
     margin-top: 10px;
 }
+.index-txt-toptext:hover{cursor:pointer;}
 .background-index-txt{
     background-color: black;
     width: 50%;

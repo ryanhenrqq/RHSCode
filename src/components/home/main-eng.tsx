@@ -76,11 +76,17 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
                         <h3 className="secTb-title">Areas of Practice</h3>
                         <div className="secondTb">
                             <div className="flex-ver">
-                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" className="secTb-badges-logo" loading="lazy" />
+                                <div className="second-tb-badge-div">
+                                    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" className="secTb-badges-logo" loading="lazy" />
+                                    <div className="secTb-badges-logo-shadow"></div>
+                                </div>
                                 <p>Python was the language that taught me programming logic and sparked my passion for building software and pursuing a career in tech. While it’s not my primary focus today—since it lacks native support for mobile or web devices—it’s still fantastic for desktop apps and automation.</p>
                             </div>
                             <div className="flex-ver">
-                                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="secTb-badges-logo" loading="lazy" />
+                                <div className="second-tb-badge-div">
+                                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" alt="JavaScript" className="secTb-badges-logo" loading="lazy" />
+                                    <div className="secTb-badges-logo-shadow"></div>
+                                </div>
                                 <p>JavaScript drew me in because of its incredible responsiveness and the endless possibilities it offers for the web. I was actually ambitious enough to try learning Java first, until I stumbled upon JS 😅. My main focus right now is on React and TypeScript.</p>
                             </div>
                         </div>
