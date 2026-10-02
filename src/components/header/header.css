@@ -51,6 +51,7 @@
     justify-content: center;
     position: absolute;
     left: 30px;
+
 }
 .image-head {
     width: 60px;
@@ -58,6 +59,7 @@
     object-fit: cover;
     border-radius: 50%;
     padding-right: 24px;
+    opacity: 1;
     transition: opacity 0.8s ease-in-out;
 }
 .title-head {

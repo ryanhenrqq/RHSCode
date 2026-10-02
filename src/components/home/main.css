@@ -112,10 +112,12 @@ img, svg {
     padding-bottom: 3%;
     border: solid 2px rgb(117, 117, 117);
     border-radius: 24px;
-    background: linear-gradient(135deg, #000000 28%, #002b2b 100%);
+    background: linear-gradient(135deg, #000000 28%, #00afaf 100%);
+    filter: brightness(0.8);
+    transition: filter 0.3s linear;
 }
 .experience-tab:hover {
-    background: linear-gradient(135deg, #000000 28%, #00afaf 100%);
+    filter: brightness(1.5);
     cursor: pointer;
 }
 .right-experience-tab{width: 100%;}
@@ -214,12 +216,10 @@ img, svg {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 .button-main-top:hover{
-    background-color: #000000;
     cursor: pointer;
 }
 .button-main-top:active {
     transform: translateY(2px);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 .button-main-top-txt{
     color: rgb(202, 193, 193);
@@ -227,7 +227,6 @@ img, svg {
     font-size: clamp(0.8rem, 2.2vw + 0.4rem, 2.2rem);
     font-weight: bolder;
     width: 80%;
-    animation: colorShift 8s infinite ease-in-out;
 }
 
 .button-main-image {
@@ -263,6 +262,7 @@ img, svg {
     font-size: 81px;
     color: #24d600;
 }
+.secTb-title:hover{cursor:default;}
 .secondTb {
     display: flex;
     flex-direction: row;
@@ -279,12 +279,48 @@ img, svg {
     z-index: 1;
     inset: 0;
 }
+.second-tb-badge-div{
+    width: 220px;
+    height: 50px;
+    position: relative;
+    border-radius: 24px;
+}
+.second-tb-badge-div:hover{
+    cursor: pointer;
+}
+.second-tb-badge-div:active{
+    transform: translateY(2px);
+}
 .secTb-badges-logo {
-    width: 40%;
-    height: 20%;
+    width: 100%;
+    height: 100%;
     border-radius: 24px;
     object-fit: cover;
-    box-shadow: 3px 3px 6px black;
+    display: block;
+    border: solid 1px rgba(255, 255, 255, 0.492);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+.secTb-badges-logo-shadow{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    border: solid 1px rgba(255, 255, 255, 0.492);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.secTb-badges-logo-shadow::after{/* tentativa de design skeumorphico */
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    right: 10px;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 15px 15px 5px 5px;
 }
 
 .secTb-subtitle1 {
