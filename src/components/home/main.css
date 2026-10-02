@@ -454,6 +454,8 @@ img, svg {
         font-weight: 400;
     }
     .image-head-inside-main{
-        left: 38px;
+        width: 45px;
+        height: 45px;
+        left: 15px;
     }
 }

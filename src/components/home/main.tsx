@@ -139,7 +139,7 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
     }
     return (
         <>
-            <main className="flex-ver">
+            <main className="flex-ver main-ct-1">
                 <select className="lang-sel-body" value={currentLang} onChange={handleSelectChange}>
                     <option value="pt">PT</option>
                     <option value="eng">EN</option>
@@ -148,7 +148,10 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
                     <div className="flex-ver index-txt">
                         <div className="flex-hor">
                             <img src={greenLogo} alt="Logo RHS Sites" className="image-head-inside-main" id="image-head" loading="lazy" />
-                            <h3>Meet <b style={{ color: "#338119"}}>RHS Code</b></h3>
+                            <div className="flex-ver-cambeable">
+                                <h4>Meet</h4>
+                                <b className="index-txt-limedup">RHS Code</b>
+                            </div>
                         </div>
                         <div className="index-txt-toptext">
                             <p style={{textAlign:'left'}}>I'm a Front-End Developer focused on creating the best, most user-friendly interfaces for your business. I build solutions that elevate your professional website by keeping things simple, intuitive, and powerful.</p>
@@ -174,7 +177,7 @@ export function MainHomeEnglish({ currentLang, onLanguageChange }: MainHomeProps
                         <div className="flex-hor-buttons">
                             <Link to="/direct" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvMessage} alt="GitHub" className="button-main-image" loading="lazy" />
-                                <div className="button-main-top-txt">Contact me</div>
+                                <div className="button-main-top-txt">Contact</div>
                             </Link>
                             <Link to="/portfolio" className="button-main-top" style={gaussianBlurDarker}>
                                 <img src={srvPortfolio} alt="Portfólio" className="button-main-image" loading="lazy" />
