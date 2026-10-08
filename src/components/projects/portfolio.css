@@ -7,6 +7,25 @@
     text-align: left;
 }
 
+.flex-hor-backlink{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    text-decoration: none;
+}
+.flex-hor-backlink:hover{
+    cursor: pointer;
+}
+.flex-hor-backlink div{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4FAEFF;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

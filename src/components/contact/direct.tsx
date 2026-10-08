@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
 import { handleBadTypo } from '../../types/utils';
 import type { InputType } from '../../types/utils';
 import './direct.css'
@@ -84,10 +85,13 @@ function FormBody({onSucess}: ChildProps) {
     })
     return (
         <form className="contact-email-form" autoComplete="off" onSubmit={handleSubmit}>
+            <Link to='/'className="flex-hor-backlink">
+                <div>{'<- Voltar para o Início'}</div>   
+            </Link>
             <div className="flex-hor-contact">
                 <div className='left-side-contact'>
                     <div className='introduction-explaining flex-ver'>
-                        <h3>Contato direto a meus serviços</h3>
+                        <h3>Contato</h3>
                         <i>Para entrar em contato, preencha com calma todos os campos abaixo, para que eu possa identifica-lo e de dar um retorno o mais breve possivel!</i>
                     </div>
 

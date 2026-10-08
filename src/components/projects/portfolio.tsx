@@ -1,4 +1,5 @@
 import "./portfolio.css"
+import { Link } from "react-router-dom"
 
 import github from '@ico/github.png'
 import instagramIcon from '@ico/instagram.png'
@@ -57,6 +58,9 @@ export function MainPortfolio() {
     return (
         <>
             <main className="flex-ver gapper">
+                <Link to='/'className="flex-hor-backlink">
+                    <div>{'<- Voltar para o Início'}</div>   
+                </Link>
                 <div className="portfolio-grid">
                     <CardGenerator projName="GitHub" projDesc="Meu perfil profissional do GitHub, contendo todo o meu portfólio." imgSrc={github} invertImg={true} hasPage={true} redirectPg="github" redirectSource="" badgeSrc="" />
                     <CardGenerator projName="Instagram" projDesc="Eu faço conteúdo abordando Programação e CyberSegurança. Você vai gostar!" imgSrc={instagramIcon} invertImg={false} hasPage={true} redirectPg="instagram" redirectSource="" badgeSrc="" />

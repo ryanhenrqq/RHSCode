@@ -69,8 +69,12 @@ function PhotoLogoChanger() {
   }, [])
   return (
     <>
-      {!topListen ? <img src={greenLogo} alt="Logo RHS Sites" className="image-head" loading="lazy" /> : null}
-      {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : "Voltar"}</h1>}
+      {!topListen ? 
+      <img src={greenLogo} alt="Logo RHS Sites" className="image-head" loading="lazy" /> : 
+      location.pathname==='/'?null:
+      <img src={greenLogo} alt="Logo RHS Sites" className="image-head" loading="lazy" />
+      }
+      {!topListen ? <h1 className="title-head title-head-index">{location.pathname==="/" ? "RHS Code" : title}</h1> : <h1 className="title-head title-head-index">{location.pathname==="/" ? "" : title}</h1>}
     </>
   )
 }
