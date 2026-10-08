@@ -114,7 +114,7 @@ function CardGenerator({projName, projDesc, imgSrc, invertImg, hasPage, redirect
                 <div className="flex-hor footer-item-container">
                     <div className="portf-footer-badge-div">
                         <img src={badgeSrc} alt="" className="portfolio-written-lang" />
-                        <div className="secTb-badges-logo-shadow"></div>
+                        <div className="portf-badge-logo-shadow"></div>
                     </div>
                 </div>:
                 null
