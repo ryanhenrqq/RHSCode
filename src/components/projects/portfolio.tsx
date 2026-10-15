@@ -26,6 +26,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     rweather: {type: 'external', url: 'https://rweather-alpha.vercel.app/'},
     rhssites: {type: 'external', url: 'https://ryanhenrqq.github.io/RHSSites/'},
     tsmvslots: {type: 'external', url: 'https://ryanhenrqq.github.io/TSMVSlots/'},
+    motovendor: {type: 'external', url: 'https://ryanhenrqq.github.io/MotoVendor/'},
 
     // Source codes (sc) - to github
     floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
@@ -39,6 +40,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     rhssitessc: {type: 'external', url: 'https://github.com/ryanhenrqq/RHSSites'},
     tsmvslotssc: {type: 'external', url: 'https://github.com/ryanhenrqq/TSMVSlots'},
     ctrainingssc: {type: 'external', url: 'https://github.com/ryanhenrqq/C-Trainings'},
+    motovendorsc: {type: 'external', url: 'https://github.com/ryanhenrqq/MotoVendor'},
 }
 
 const handleRedirect = (key: string) => {
@@ -79,6 +81,7 @@ export function MainPortfolio() {
                 <h3>Projetos em desenvolvimento</h3>
                 <div className="portfolio-grid">
                     <CardGenerator projName="TSMV Slots" projDesc="Protótipo de um caça niquel que não gasta dinheiro e entrega o mesmo nivel de prazer." imgSrc={slotIcon} invertImg={true} hasPage={true} redirectPg="tsmvslots" redirectSource="tsmvslotssc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
+                    <CardGenerator projName="MotoVendor" projDesc="Uma empresa fictícia de venda de motos. Este é um repositorio usado apenas para demonstração de layout dos meus sites." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={true} redirectPg="motovendor" redirectSource="motovendorsc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="KalcCalculadora" projDesc="Aplicativo web de calculadora e formulas." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="kalccalculadorasc" badgeSrc="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000" />
                     <CardGenerator projName="ToDoTasks Legacy" projDesc="Crie tarefas e lembretes pelo navegador!" imgSrc="https://ryanhenrqq.github.io/ToDoTasks/components/res/icon/task.svg" invertImg={true} hasPage={true} redirectPg="todotasks" redirectSource="todotaskssc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
                     <CardGenerator projName="Clima com OpenWeather" projDesc="Demo de um App de Clima pronto para a API OpenWeather" imgSrc="https://ryanhenrqq.github.io/ClimaComOpenWeather/components/res/icon/sun.svg" invertImg={true} hasPage={true} redirectPg="climaopenweather" redirectSource="climaopenweathersc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
