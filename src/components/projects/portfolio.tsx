@@ -41,6 +41,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     tsmvslotssc: {type: 'external', url: 'https://github.com/ryanhenrqq/TSMVSlots'},
     ctrainingssc: {type: 'external', url: 'https://github.com/ryanhenrqq/C-Trainings'},
     motovendorsc: {type: 'external', url: 'https://github.com/ryanhenrqq/MotoVendor'},
+    assemblytrainingssc: {type: 'external', url: 'https://github.com/ryanhenrqq/AsseemblyTrainingsGNU'},
 }
 
 const handleRedirect = (key: string) => {
@@ -92,6 +93,7 @@ export function MainPortfolio() {
                     <CardGenerator projName="KalcCalculadora Lite" projDesc="Aplicativo android de calculadora e formulas." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="kalccalculadoralitesc" badgeSrc="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
                     <CardGenerator projName="RHS Sites (2024)" projDesc="A Primeira versão do meu site para venda de criação de sites." imgSrc={greenLogo} invertImg={false} hasPage={true} redirectPg="rhssites" redirectSource="rhssitessc" badgeSrc="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
                     <CardGenerator projName="C-Trainings" projDesc="Pequenos treinos pessoais em C. Desconsidere isso como um portfólio." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="ctrainingssc" badgeSrc="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
+                    <CardGenerator projName="AssemblyTrainingsGNU" projDesc="Pequenos treinos pessoais em Assembly, compilado no GNU x64" imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="assemblytrainingssc" badgeSrc="https://img.shields.io/badge/Assembly-6E4C13?style=for-the-badge&logo=gnu&logoColor=white" />
                 </div>
             </main>    
         </>
