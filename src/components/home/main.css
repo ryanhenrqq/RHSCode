@@ -37,7 +37,7 @@ input, textarea {
     -webkit-user-select: text;
     user-select: text;
 }
-img, svg {
+img, svg, button {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;

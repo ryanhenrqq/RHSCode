@@ -27,6 +27,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     rhssites: {type: 'external', url: 'https://ryanhenrqq.github.io/RHSSites/'},
     tsmvslots: {type: 'external', url: 'https://ryanhenrqq.github.io/TSMVSlots/'},
     motovendor: {type: 'external', url: 'https://ryanhenrqq.github.io/MotoVendor/'},
+    easybuscep: {type: 'external', url: 'https://easy-bus-cep.vercel.app/'},
 
     // Source codes (sc) - to github
     floodthecookiesc: {type: 'external', url: 'https://github.com/ryanhenrqq/FloodTheCookie'},
@@ -42,6 +43,7 @@ const REDIRECT_MAP: Record<string, RedirectConfigs> = {
     ctrainingssc: {type: 'external', url: 'https://github.com/ryanhenrqq/C-Trainings'},
     motovendorsc: {type: 'external', url: 'https://github.com/ryanhenrqq/MotoVendor'},
     assemblytrainingssc: {type: 'external', url: 'https://github.com/ryanhenrqq/AsseemblyTrainingsGNU'},
+    easybuscepsc: {type: 'external', url: 'https://github.com/ryanhenrqq/EasyBusCEP'},
 }
 
 const handleRedirect = (key: string) => {
@@ -81,6 +83,7 @@ export function MainPortfolio() {
                 
                 <h3>Projetos em desenvolvimento</h3>
                 <div className="portfolio-grid">
+                    <CardGenerator projName="EasyBusCEP" projDesc="Buscador de CEP Brasileiro, focado em ter o minimo de esforço possivel do usuario para preencher as informações, usando de Geolocalização e APIs." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={true} redirectPg="easybuscep" redirectSource="easybuscepsc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="TSMV Slots" projDesc="Protótipo de um caça niquel que não gasta dinheiro e entrega o mesmo nivel de prazer." imgSrc={slotIcon} invertImg={true} hasPage={true} redirectPg="tsmvslots" redirectSource="tsmvslotssc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="MotoVendor" projDesc="Uma empresa fictícia de venda de motos. Este é um repositorio usado apenas para demonstração de layout dos meus sites." imgSrc="https://img.icons8.com/ios-filled/100/no-image.png" invertImg={true} hasPage={true} redirectPg="motovendor" redirectSource="motovendorsc" badgeSrc="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
                     <CardGenerator projName="KalcCalculadora" projDesc="Aplicativo web de calculadora e formulas." imgSrc="https://raw.githubusercontent.com/ryanhenrqq/KalcCalculadora/main/src/res/calculator.png" invertImg={true} hasPage={false} redirectPg="" redirectSource="kalccalculadorasc" badgeSrc="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000" />
